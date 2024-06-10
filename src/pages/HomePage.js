@@ -4,7 +4,8 @@ export const HomePage = () => {
       return (
         <div>
             <Header/>
-            <main>
+            <main style={{marginTop: "100px"}}>
+                
                 <h1>Welcome to WOOF3D</h1>
                 <h4>The 3D Printing Club at the University of Washington</h4>
                 <br></br>
