@@ -1,19 +1,17 @@
 import { Link } from "react-router-dom";
+import "./Header.css";
 
 export const Header = () => {
     return (
         <>
-        <header style={{position: "fixed", top: 0, left: 0, backgroundColor: "white", color: "black", width: "100%"}}>
-            <h3>WOOF3D</h3>
-            <Link to="/">Home</Link>
-            {" | "}
-            <Link to="/projects">Projects</Link>
-            {" | "}
-            <Link to="/officers">Officers</Link>
-            {" | "}
-            <Link to="/officehours">Office Hours</Link>
-            {" | "}
-            <Link to="/resources">Member Resources</Link>
+        <header className="Header">
+            <Link to="/"><div className="HomeButton"><img className="HeaderImg" src="woof3dlogo.png" alt="WOOF3D Logo"/><h3 className="HeaderText">WOOF3D</h3></div></Link>
+            <div className="Navbar">
+                <Link className="NavItem" to="/projects">Projects</Link>
+                <Link className="NavItem" to="/officers">Officers</Link>
+                <Link className="NavItem" to="/officehours">Office Hours</Link>
+                <Link className="NavItem" to="/resources">Member Resources</Link>
+            </div>
             <hr></hr>
         </header>
         </>

@@ -1,10 +1,11 @@
 import { Header } from "../components/Header";
+import "./Page.css";
 
 export const HomePage = () => {
       return (
         <div>
             <Header/>
-            <main style={{marginTop: "100px"}}>
+            <main className="MainContent">
                 
                 <h1>Welcome to WOOF3D</h1>
                 <h4>The 3D Printing Club at the University of Washington</h4>
@@ -31,24 +32,6 @@ export const HomePage = () => {
                 <p>Attending all workshops is completely free. There is a $25 fee to become a full fledged club member. 
                     This gives you access to unlimited filament, access to the club's printers, as well as free pizza at the end of each quarter at the club social.
                 </p>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <br></br>
-                <p>Test</p>
             </main>
         </div>
     );
