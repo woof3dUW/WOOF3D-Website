@@ -1,9 +1,10 @@
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 import "./Page.css";
 
 export const HomePage = () => {
       return (
-        <div>
+        <div className="Container">
             <Header/>
             <main className="MainContent">
                 
@@ -33,6 +34,7 @@ export const HomePage = () => {
                     This gives you access to unlimited filament, access to the club's printers, as well as free pizza at the end of each quarter at the club social.
                 </p>
             </main>
+            <Footer/>
         </div>
     );
 }
