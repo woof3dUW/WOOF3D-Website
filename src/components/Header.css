@@ -48,8 +48,8 @@
     text-decoration: none;
     font-weight: 575;
     padding: 10px;
-    border-radius: 50px;
-    transition: background-color 0.4s;
+    border-radius: 10px;
+    transition: background-color 0.6s ease-out;
 }
 
 .NavItem:hover {
