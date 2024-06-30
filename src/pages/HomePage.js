@@ -8,8 +8,12 @@ export const HomePage = () => {
             <Header/>
             <main className="MainContent">
                 <div className="Banner">
+                    <div className="BannerImg"></div>
                     <h1 className="BannerTextTop">Welcome to WOOF3D</h1>
                     <h1 className="BannerTextBottom">The 3D Printing Club at the University of Washington</h1>
+                </div>
+                <div className="BannerTest">
+                    
                 </div>
                 <div className="Section">
                     <h1 className="Head">About the Club</h1>
@@ -46,6 +50,23 @@ export const HomePage = () => {
                             club printers and free pizza every quarter. Fees can be paid either through PayPal or by givign cash to an officer. Click <a href="https://discord.gg/neKV9u38PV" className="Link" target="_blank" rel="noreferrer noopener">here</a> to fill out the form.
                         </div>
                     </ol>
+                </div>
+                <div className="Section">
+                    <h1 className="Head">Where are we?</h1>
+                    <p className="Text">All club operations take place in McMahon Hall in North Campus.</p>
+                    <iframe
+                        title="McMahonMap"
+                        width="700"
+                        height="500"
+                        frameborder="0"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNgFy9uS2bSLkYBjubHqulgPEHCBnuU0w&q=4200+Little+Canoe+Channel+NE,Seattle,WA"
+                        allowfullscreen>
+                    </iframe>
+                    <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
+                    <div className="PompeiiMapImg"/>
+                    <p className="Text">The club printers and filament are in The 8 makerspace on the basement floor on the South side of McMahon</p>
+                    <div className="The8MapImg"/>
                 </div>
             </main>
             <Footer/>
