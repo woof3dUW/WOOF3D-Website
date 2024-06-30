@@ -3,7 +3,7 @@ import { HomePage } from "./pages/HomePage";
 import { ProjectsPage } from "./pages/ProjectsPage";
 import { OfficersPage } from "./pages/OfficersPage";
 import { OfficeHoursPage } from "./pages/OfficeHoursPage";
-import { MemberResourcesPage } from "./pages/MemberResourcesPage";
+import { FilamentPage } from "./pages/FilamentPage";
 import { ErrorPage } from "./pages/ErrorPage";
 
 export const Routes = () => {
@@ -14,7 +14,7 @@ export const Routes = () => {
                 <Route path="/projects" element={<ProjectsPage/>}/>
                 <Route path="/officers" element={<OfficersPage/>}/>
                 <Route path="/officehours" element={<OfficeHoursPage/>}/>
-                <Route path="/resources" element={<MemberResourcesPage/>}/>
+                <Route path="/filament" element={<FilamentPage/>}/>
                 <Route element={<ErrorPage/>}/>
             </Switch>
         </BrowserRouter>

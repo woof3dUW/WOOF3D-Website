@@ -113,3 +113,38 @@
     background: url(the8.png);
     background-size: 700px 500px;
 }
+
+.Center {
+    text-align: center;
+}
+
+.Button {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 8px;
+    margin-top: 40px;
+    border: 2px solid black;
+    color: rgb(218, 201, 255);
+    border-radius: 20px;
+    background-color: rgb(75, 46, 131);
+    margin: 20px;
+    text-decoration: none;
+    transition: color 0.4s ease-in-out, background-color 0.4s ease-in-out;
+}
+
+.Button:hover {
+    background-color: rgb(218, 201, 255);
+    color: rgb(75, 46, 131);
+}
+
+.ButtonDiv {
+    margin: 40px;
+}
+
+.Sheet {
+    border: none;
+    width: 900px;
+    height: 700px;
+    margin-top: 30px;
+}
