@@ -19,7 +19,7 @@ export const FilamentPage = () => {
                 </div>
                 <div className="Section">
                     <h1 className="Head Center">Availability</h1>
-                    <div className="Center"><iframe className="Sheet Center" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWhR-g-NR1x7a7eRMpkzz9RuNA5HcMRO5s8k563ZIjT3f892DjTYb63KUA0d_n-mIB2HGDSUsmLGfA/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false&amp;range=A:J"></iframe></div>
+                    <div className="Center"><iframe className="Embed Center" title="filamentAvailability" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRWhR-g-NR1x7a7eRMpkzz9RuNA5HcMRO5s8k563ZIjT3f892DjTYb63KUA0d_n-mIB2HGDSUsmLGfA/pubhtml?gid=0&amp;single=true&amp;widget=false&amp;headers=false&amp;chrome=false&amp;range=A:J"></iframe></div>
                 </div>
             </main>
             <Footer/>

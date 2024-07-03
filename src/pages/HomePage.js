@@ -1,6 +1,8 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Page.css";
+import pompeiiMap from "./pompeiiRoom.png"
+import the8Map from "./the8.png"
 
 export const HomePage = () => {
       return (
@@ -57,9 +59,9 @@ export const HomePage = () => {
                         allowfullscreen>
                     </iframe>
                     <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
-                    <div className="PompeiiMapImg"/>
+                    <img className="MapImg" src={pompeiiMap} alt="Map to the Pompeii Room"/>
                     <p className="Text">The club printers and filament are in The 8 makerspace on the basement floor on the South side of McMahon</p>
-                    <div className="The8MapImg"/>
+                    <img className="MapImg" src={the8Map} alt="Map to The 8"/>
                 </div>
             </main>
             <Footer/>

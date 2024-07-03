@@ -1,5 +1,6 @@
 .MainContent {
     text-align: left;
+    margin-top: 70px;
 }
 
 @font-face {
@@ -13,7 +14,7 @@
 }
 
 .Text {
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Manrope';
     margin-top: 10px;
 }
@@ -35,7 +36,6 @@
 
 .Banner {
     width: 100%;
-    margin-top: 70px;
     height: 500px;
     background: url("banner.png");
     font-family: ManropeBold;
@@ -75,7 +75,9 @@
 }
 
 .Section {
-    margin: 150px;
+    margin: 50px;
+    margin-left: 150px;
+    margin-right: 150px;
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -100,18 +102,9 @@
     padding-right: 0px;
 }
 
-.PompeiiMapImg {
+.MapImg {
     height: 500px;
     width: 700px;
-    background: url(pompeiiRoom.png);
-    background-size: 700px 500px;
-}
-
-.The8MapImg {
-    height: 500px;
-    width: 700px;
-    background: url(the8.png);
-    background-size: 700px 500px;
 }
 
 .Center {
@@ -142,9 +135,50 @@
     margin: 40px;
 }
 
-.Sheet {
+.Embed {
     border: none;
-    width: 900px;
+    width: 1100px;
     height: 700px;
     margin-top: 30px;
+}
+
+.Row {
+    margin-top: 50px;
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+}
+
+.Portrait {
+    height: 400px;
+    width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.OfficerText {
+    font-size: 20px;
+    font-family: 'Manrope';
+    margin-top: 10px;
+}
+
+.OfficerSection {
+    width: 400px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+}
+
+.Name {
+    font-size: 30px;
+    font-family: 'Manrope';
+    font-weight: bold;
+}
+
+.Role {
+    font-size: 15px;
+    font-family: 'Manrope';
+    font-style: italic;
 }
