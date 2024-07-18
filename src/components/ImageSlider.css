@@ -1,0 +1,52 @@
+.Slide {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    transition: background-image 0.5s ease-in-out;
+}
+
+.Slider {
+    height: 100%;
+    position: relative;
+} 
+
+.Arrow {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    font-size: 45px;
+    color: white;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.Left {
+    left: 20px;
+}
+
+.Right {
+    right: 20px;
+}
+
+.Unselectable {
+    -moz-user-select: -moz-none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.DotContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 0px;
+}
+
+.Dot {
+    margin: 10px;
+    margin-top: 0px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: 900;
+}

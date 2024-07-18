@@ -12,7 +12,7 @@ export const OfficersPage = () => {
             <main className="MainContent">
                 <h1 className="Head Center">Meet Our Officers</h1>
                 <div className="Row">
-                    <div className="OfficerSection">
+                    <div className="RowSection">
                         <img className="Portrait" src={vash} alt="Vash Portrait"/>
                         <div className="Name">Vash Mavrinac</div>
                         <div className="Role">Software Technical Lead</div>
@@ -20,7 +20,7 @@ export const OfficersPage = () => {
                             I especially enjoy the artistic aspect of 3D printing, such as making figures or swords. I hope to see you at the club!
                         </p>
                     </div>
-                    <div className="OfficerSection">
+                    <div className="RowSection">
                         <img className="Portrait" src={joshua} alt="Joshua Portrait"/>
                         <div className="Name">Joshua Levin</div>
                         <div className="Role">Education Co-Lead</div>
