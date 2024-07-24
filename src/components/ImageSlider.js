@@ -22,6 +22,14 @@ export const ImageSlider = ({slides}) => {
 
     const goToSlide = (index) => {
         setCurrentIndex(index);
+    } 
+
+    const selected = {
+        color: "rgb(218, 201, 255)"
+    }
+
+    const unselected = {
+        color: "black"
     }
 
     return <div className="Slider">
@@ -30,7 +38,7 @@ export const ImageSlider = ({slides}) => {
         <div className="Slide" style={slideBackground}></div>
         <div className="DotContainer">
             {slides.map((slide, slideIndex) => (
-                <div key={slideIndex} className="Dot Unselectable" onClick={() => goToSlide(slideIndex)}>•</div>
+                <div key={slideIndex} className="Dot Unselectable" onClick={() => goToSlide(slideIndex)} style={slideIndex === currentIndex ? selected : unselected}>•</div>
             ))}
         </div>
     </div>

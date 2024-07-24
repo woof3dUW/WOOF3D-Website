@@ -2,8 +2,8 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Page.css";
-import vash from "./vash.jpg"
-import joshua from "./joshua.jpg"
+import vash from "./images/vash.jpg"
+import joshua from "./images/joshua.jpg"
 
 export const OfficersPage = () => {
     return (

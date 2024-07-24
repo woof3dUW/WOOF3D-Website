@@ -3,7 +3,6 @@
     height: 100%;
     background-position: center;
     background-size: cover;
-    transition: background-image 0.5s ease-in-out;
 }
 
 .Slider {
@@ -19,6 +18,11 @@
     color: white;
     z-index: 1;
     cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.Arrow:hover {
+    color: rgb(218, 201, 255);
 }
 
 .Left {
@@ -44,8 +48,8 @@
 }
 
 .Dot {
-    margin: 10px;
-    margin-top: 0px;
+    padding: 10px;
+    padding-top: 0px;
     cursor: pointer;
     font-size: 30px;
     font-weight: 900;
