@@ -50,9 +50,8 @@ export const HomePage = () => {
                     <h1 className="Head">Where are we?</h1>
                     <p className="Text">All club operations take place in McMahon Hall in North Campus.</p>
                     <iframe
+                        className="MapImg Embed"
                         title="McMahonMap"
-                        width="700"
-                        height="500"
                         frameborder="0"
                         referrerpolicy="no-referrer-when-downgrade"
                         src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNgFy9uS2bSLkYBjubHqulgPEHCBnuU0w&q=4200+Little+Canoe+Channel+NE,Seattle,WA"

@@ -1,3 +1,9 @@
+.Container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
 .MainContent {
     text-align: left;
     margin-top: 70px;
@@ -13,6 +19,13 @@
     src: url(fonts/regular.woff);
 }
 
+.Section {
+    margin: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 80%;
+}
+
 .Text {
     font-size: 25px;
     font-family: 'Manrope';
@@ -26,12 +39,6 @@
     text-decoration-color: rgb(218, 201, 255);
     text-decoration-thickness: 4px;
     margin-bottom: 0px;
-}
-
-.Container {
-    min-height: 100vh;
-    display: grid;
-    grid-template-rows: 1fr auto;
 }
 
 .Banner {
@@ -60,6 +67,7 @@
     background-color: rgb(75, 46, 131);    
     position: static;
     z-index: 2;
+    text-align: center;
 }
 
 .BannerTextBottom {
@@ -72,14 +80,7 @@
     background-color: rgb(75, 46, 131);
     position: static;
     z-index: 1;
-}
-
-.Section {
-    margin: 50px;
-    margin-left: 150px;
-    margin-right: 150px;
-    padding-left: 100px;
-    padding-right: 100px;
+    text-align: center;
 }
 
 .Step {
@@ -100,11 +101,6 @@
 .Link {
     padding-left: 0px;
     padding-right: 0px;
-}
-
-.MapImg {
-    height: 500px;
-    width: 700px;
 }
 
 .Center {
@@ -132,14 +128,21 @@
 }
 
 .ButtonDiv {
-    margin: 40px;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 .Embed {
     border: none;
-    width: 1100px;
+    width: 100%;
+    max-width: 1100px;
     height: 700px;
     margin-top: 30px;
+}
+
+.MapImg {
+    width: 100%;
+    max-width: 800px;
 }
 
 .Row {
@@ -196,4 +199,5 @@
     width: 600px;
     height: 500px;
     border-radius: 10px;
+    margin-top: 10px;
 }
