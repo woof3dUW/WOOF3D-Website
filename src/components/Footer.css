@@ -25,3 +25,32 @@
     color: rgb(218, 201, 255);
     text-decoration: underline;
 }
+
+.TextContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 40px;
+    margin-right: auto;
+}
+
+@media (max-width: 650px) {
+    .Footer {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .LeftText {
+        margin-right: 5px;
+    }
+
+    .ContactUsText {
+        margin-left: 0;
+    }
+
+    .TextContainer {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
