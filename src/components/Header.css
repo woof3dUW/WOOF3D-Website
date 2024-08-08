@@ -45,7 +45,7 @@
 
 @media (max-width: 775px) {
     .Navbar {
-        visibility: hidden;
+        display: none;
     }
 }
 
