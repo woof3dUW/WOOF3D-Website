@@ -210,8 +210,8 @@
 }
 
 .SliderContainer {
-    width: 600px;
-    height: 500px;
-    border-radius: 10px;
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 6 / 5;
     margin-top: 10px;
 }

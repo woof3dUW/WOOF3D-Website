@@ -23,6 +23,7 @@ export const VolcanoesPage = () => {
                     <div className="SliderContainer">
                         <ImageSlider slides={slides}/>
                     </div>
+                    <br/>
                     <p className="Text">Goal: Work with Steve on his personal project of printing the topographical maps of the Northwest's five volcanos. 
                         He showed them how to create 3D topo maps, how to use MeshMixer to manipulate the STL files, slice the files and how-to 3D print the files.
                     </p>

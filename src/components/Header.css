@@ -43,6 +43,12 @@
     padding: 20px;
 }
 
+@media (max-width: 775px) {
+    .Navbar {
+        visibility: hidden;
+    }
+}
+
 .NavItem {
     font-size: 18px;
     margin: 10px;

@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "./woof3dlogo.png"
+import { Sidebar } from "./Sidebar";
 
 export const Header = () => {
     return (
-        <>
         <header className="Header">
+            <Sidebar/>
             <Link className="HeaderText" to="/"><div className="HomeButton"><img className="HeaderImg" src={logo} alt="WOOF3D Logo"/>WOOF3D</div></Link>
             <div className="Navbar">
                 <Link className="NavItem" to="/projects">Projects</Link>
@@ -14,6 +15,5 @@ export const Header = () => {
                 <Link className="NavItem" to="/filament">Filament</Link>
             </div>
         </header>
-        </>
     )
 }
