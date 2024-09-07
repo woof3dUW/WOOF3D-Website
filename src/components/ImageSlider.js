@@ -30,12 +30,12 @@ export const ImageSlider = ({slides}) => {
 
     return (
         <div className="Slider">
-            <div className="Arrow Left Unselectable" onClick={prevSlide}>&#10094;</div>
-            <div className="Arrow Right Unselectable" onClick={nextSlide}>&#10095;</div>
+            <div className="Arrow Left Unselectable" onClick={prevSlide}>{slides.length > 1 ? "❮" : ""}</div>
+            <div className="Arrow Right Unselectable" onClick={nextSlide}>{slides.length > 1 ? "❯" : ""}</div>
             <div className="Slide" style={slideBackground}></div>
             <div className="DotContainer">
                 {slides.map((slide, slideIndex) => (
-                    <div key={slideIndex} className="Dot Unselectable" onClick={() => setCurrentIndex(slideIndex)} style={slideIndex === currentIndex ? selected : unselected}>•</div>
+                    <div key={slideIndex} className="Dot Unselectable" onClick={() => setCurrentIndex(slideIndex)} style={slideIndex === currentIndex ? selected : unselected}>{slides.length > 1 ? "•" : ""}</div>
                 ))}
             </div>
         </div>

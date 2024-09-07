@@ -19,7 +19,11 @@ export const IndividualProjectPage = () => {
                         <ImageSlider slides={slides}/>
                     </div>
                     <br/>
-                    <p className="Text">{text}</p>
+                    <p className="Text">
+                        {text.map((paragraph) => (
+                            <div className="Text" style={{marginTop: "20px"}}>{paragraph}</div>
+                        ))}
+                    </p>
                 </div>
             </main>
             <Footer/>

@@ -20,6 +20,7 @@
     z-index: 1;
     cursor: pointer;
     transition: color 0.2s ease-in-out;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black, -1px -1px black, 1px -1px black, -1px 1px black, 1px 1px black;
 }
 
 .Arrow:hover {
