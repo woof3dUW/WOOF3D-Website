@@ -47,10 +47,12 @@
 
     .ContactUsText {
         margin-left: 0;
+        margin-bottom: 10px;
     }
 
     .TextContainer {
         margin-left: 0;
         margin-right: 0;
+        margin-bottom: 30px;
     }
 }
