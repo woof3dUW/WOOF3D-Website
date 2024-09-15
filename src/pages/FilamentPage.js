@@ -13,7 +13,7 @@ export const FilamentPage = () => {
                     <p className="Text">All members who have paid the club fee have access to all of the club's filament.
                         However, members can check out a maximum of two filament rolls at a time. 
                     </p>
-                    <p className="Text">Haven't paid the club fee yet? <a href="https://discord.gg/neKV9u38PV" className="Link" target="_blank" rel="noreferrer noopener">Here</a> is 
+                    <p className="Text">Haven't paid the club fee yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8yugFeTvsDFzVgzXpk7UOm4lbAYiHEVELpiI2eQCwVMb2QQ/viewform?usp=sf_link" className="Link" target="_blank" rel="noreferrer noopener">Here</a> is 
                     the fee payment form, which puts your name on the list of paying members. To pay the fee, talk to an officer. Fees can be paid either through PayPal or with cash.
                     </p>
                 </div>

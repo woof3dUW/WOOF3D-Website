@@ -7,17 +7,25 @@ import joshua from "./images/joshua.jpg";
 import rory from "./images/rory.png";
 import giang from "./images/giang.jpg";
 import rhiannon from "./images/rhiannon.jpg";
+import nathan from "./images/nathan.jpg";
+import duy from "./images/duy.png";
+import kyle from "./images/kyle.jpeg";
+import marcus from "./images/marcus.jpeg";
 
 export const OfficersPage = () => {
     const officers = [
         {
-            name: "Nathan Bursch", role: "President", picture: null, bio: ``
+            name: "Nathan Bursch", role: "President", picture: nathan, bio: `My name is Nathan; I’m a senior in Mechanical Engineering: Mechatronics. 
+            This is my fourth year in Woof3D and my first year as club president. I spend most of my free time 3D modeling or 3D printing, 
+            so if you have any questions about these topics, feel free to reach out!`
         },
         {
-            name: "Duy", role: "Project Manager", picture: null, bio: ``
+            name: "Duy", role: "Project Manager", picture: duy, bio: `I'm Duy a Senior in Mechanical Engineering with interest in specifically medical engineering. 
+            I've worked in research and industry in the fields of medicine and aerospace respectively. My experiences lie all over the engineering world so feel free to 
+            reach out for help! If I can't help you, I guarantee that I can find someone who can.`
         },
         {
-            name: "Kyle Wong", role: "Treasurer/Social Media Management", picture: null, bio: ``
+            name: "Kyle Wong", role: "Treasurer / Social Media Manager", picture: kyle, bio: ``
         },
         {
             name: "Vash Mavrinac", role: "Software Technical Lead", picture: vash, bio: `Hello, my name is Vash and I'm a second year majoring in Computer Science. 
@@ -28,19 +36,19 @@ export const OfficersPage = () => {
             and many more this year! I'm also interested in utilizing 3D printing for cosplay props, miniature weapons, etc. See you at WOOF3D!`
         },
         {
-            name: "Rory Barger", role: "Workspace Manager", picture: rory, bio: `My name is Rory Barger and I a Workspace Manager for Woof 3D. This is 3rd year being of Woof 3D, 
+            name: "Rory Barger", role: "Workspace Manager", picture: rory, bio: `My name is Rory Barger and I am a Workspace Manager for Woof 3D. This is my 3rd year at Woof 3D, 
             and I previously was an Education Officer last year. I am a senior Mechanical Engineering student with a specialization in Biomechanics, 
             and I am interested in working with medical devices, manufacturing, and innovation. I enjoy the process and potential of 3D printing, as the options are limitless.`
         },
         {
-            name: "Marcus Drienyovszky", role: "Education Co-Lead", picture: null, bio: ``
+            name: "Marcus Drienyovszky", role: "Education Co-Lead", picture: marcus, bio: ``
         },
         {
             name: "Joshua Levin", role: "Education Co-Lead", picture: joshua, bio: `Hi, I'm Joshua Levin. I'm a sophomore studying electrical and computer engineering. 
             Come join the club!`
         },
         {
-            name: "Rhiannon Garnier", role: "Communications Director", picture: rhiannon, bio: `Hi! I’m Rhiannon and I am a sophomore in electrical and computer engineering. 
+            name: "Rhiannon Garnier", role: "Communications Director", picture: rhiannon, bio: `Hi! I'm Rhiannon and I am a sophomore in electrical and computer engineering. 
             I love sailing and definitely want to 3D print some model boats. I am looking forward to a great year with the club!`
         }
     ]

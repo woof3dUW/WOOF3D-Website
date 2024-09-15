@@ -38,11 +38,11 @@ export const HomePage = () => {
                     <ol className="Text">
                         <li className="Step">Join the Discord Server</li>
                         <div className="StepDetails">This is where all communication and announcements take place. Click <a href="https://discord.gg/neKV9u38PV" className="Link" target="_blank" rel="noreferrer noopener">here</a> to join.</div>
-                        <li className="Step">Fill out the Interest Form</li>
-                        <div className="StepDetails">This helps us keep track of the club's scale. Click <a href="https://forms.gle/XueaaQsFAmZmDSgZ8" className="Link" target="_blank" rel="noreferrer noopener">here</a> to fill out the form.</div>
+                        <li className="Step">Fill out the Join Form</li>
+                        <div className="StepDetails">This helps us keep track of the club's scale. Click <a href="https://forms.gle/hXFLdNgB5KLaSfyo6" className="Link" target="_blank" rel="noreferrer noopener">here</a> to fill out the form.</div>
                         <li className="Step">Fill out the Fee Form (Optional)</li>
                         <div className="StepDetails">This puts your name down for paying the club fee, which gives you access to unlimited filament, access to the 
-                            club printers and free pizza every quarter. Fees can be paid either through PayPal or by giving cash to an officer. Click <a href="https://discord.gg/neKV9u38PV" className="Link" target="_blank" rel="noreferrer noopener">here</a> to fill out the fee payment form.
+                            club printers and free pizza every quarter. Fees can be paid either through PayPal or by giving cash to an officer. Click <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8yugFeTvsDFzVgzXpk7UOm4lbAYiHEVELpiI2eQCwVMb2QQ/viewform?usp=sf_link" className="Link" target="_blank" rel="noreferrer noopener">here</a> to fill out the fee payment form.
                         </div>
                     </ol>
                 </div>
