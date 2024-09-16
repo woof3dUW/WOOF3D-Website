@@ -3,10 +3,14 @@ import { Footer } from "../components/Footer";
 import "./Page.css";
 
 export const OfficeHoursPage = () => {
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+    
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">
+            <main className="MainContent" onLoad={scrollToTop()}>
                 <div className="Section">
                     <h1 className="Head">Office Hours</h1>
                     <p className="Text">Need help or advice with anything 3D printing related? Stop by office hours and one of our officers will be happy to help!</p>

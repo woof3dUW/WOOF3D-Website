@@ -6,13 +6,17 @@ import { ImageSlider } from "../components/ImageSlider";
 
 
 export const IndividualProjectPage = () => {
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+    
     const location = useLocation();
     const { title, slides, text } = location.state;
 
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">
+            <main className="MainContent" onLoad={scrollToTop()}>
                 <div className="Section">
                     <h1 className="Head">{title}</h1>
                     <div className="SliderContainer">

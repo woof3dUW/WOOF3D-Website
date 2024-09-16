@@ -3,10 +3,14 @@ import { Footer } from "../components/Footer";
 import "./Page.css";
 
 export const FilamentPage = () => {
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+    
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">
+            <main className="MainContent" onLoad={scrollToTop()}>
                 <div className="Section">
                     <h1 className="Head">Filament Checkout</h1>
                     <div className="ButtonDiv"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdsVsz2Kro94-VpnYosUNd5y-Uj26H-qXaRmu570BNp1QZUEQ/viewform?pli=1&pli=1" className="Button" target="_blank" rel="noreferrer noopener">Checkout Form</a></div>

@@ -13,6 +13,10 @@ import kyle from "./images/kyle.jpeg";
 import marcus from "./images/marcus.jpeg";
 
 export const OfficersPage = () => {
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+    
     const officers = [
         {
             name: "Nathan Bursch", role: "President", picture: nathan, bio: `My name is Nathan; I’m a senior in Mechanical Engineering: Mechatronics. 
@@ -56,7 +60,7 @@ export const OfficersPage = () => {
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">
+            <main className="MainContent" onLoad={scrollToTop()}>
                 <h1 className="Head Center">Meet Our Officers</h1>
                 {officers.map((officer, officerIndex) => (
                     <div className="Row">

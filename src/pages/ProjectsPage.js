@@ -55,6 +55,10 @@ import iss2 from "./images/iss2.jpg";
 import iss3 from "./images/iss3.jpg";
 
 export const ProjectsPage = () => {    
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }
+    
     const projects = [
         {
             title: "ISS-Mimic", 
@@ -278,7 +282,7 @@ export const ProjectsPage = () => {
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">                
+            <main className="MainContent" onLoad={scrollToTop()}>                
                 <h1 className="Head Center">Past Projects</h1>
                 {projects.map((project, projectIndex) => (
                     <div className="Row">

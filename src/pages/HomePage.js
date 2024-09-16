@@ -5,10 +5,14 @@ import pompeiiMap from "./images/pompeiiRoom.png";
 import the8Map from "./images/the8.png";
 
 export const HomePage = () => {
-      return (
+    function scrollToTop() {
+        window.scrollTo(0,0);
+    }  
+    
+    return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">
+            <main className="MainContent" onLoad={scrollToTop()}>
                 <div className="Banner">
                     <h1 className="BannerTextTop">Welcome to WOOF3D</h1>
                     <h1 className="BannerTextBottom">The 3D Printing Club at the University of Washington</h1>
