@@ -30,7 +30,7 @@ export const OfficersPage = () => {
         },
         {
             name: "Kyle Wong", role: "Treasurer / Social Media Manager", picture: kyle, bio: `Hello everyone I'm Kyle, treasurer of WOOF3D for this year. 
-            I am a senior studying mechanical engineering. Last year I was apart of the Illumination team project designing and creating lighting solutions. 
+            I am a senior studying mechanical engineering. Last year I was a part of the Illumination team project designing and creating lighting solutions. 
             A few of my hobbies include skating, cars and going to the gym.`
         },
         {

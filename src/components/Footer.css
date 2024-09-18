@@ -12,13 +12,8 @@
     margin-left: auto;
 }
 
-.LeftText {
-    margin-left: auto;
-    margin-right: 20px;
-}
-
-.RightText {
-    margin-right: auto;
+.Contacts {
+    margin-top: 5px;
 }
 
 .Link {
@@ -28,7 +23,8 @@
 
 .TextContainer {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
     margin-left: 40px;
     margin-right: auto;
@@ -41,8 +37,9 @@
         justify-content: center;
     }
 
-    .LeftText {
-        margin-right: 5px;
+    .Contacts {
+        margin-left: 3%;
+        margin-right: 3%;      
     }
 
     .ContactUsText {
