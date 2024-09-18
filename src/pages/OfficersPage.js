@@ -29,7 +29,9 @@ export const OfficersPage = () => {
             reach out for help! If I can't help you, I guarantee that I can find someone who can.`
         },
         {
-            name: "Kyle Wong", role: "Treasurer / Social Media Manager", picture: kyle, bio: ``
+            name: "Kyle Wong", role: "Treasurer / Social Media Manager", picture: kyle, bio: `Hello everyone I'm Kyle, treasurer of WOOF3D for this year. 
+            I am a senior studying mechanical engineering. Last year I was apart of the Illumination team project designing and creating lighting solutions. 
+            A few of my hobbies include skating, cars and going to the gym.`
         },
         {
             name: "Vash Mavrinac", role: "Software Technical Lead", picture: vash, bio: `Hello, my name is Vash and I'm a second year majoring in Computer Science. 

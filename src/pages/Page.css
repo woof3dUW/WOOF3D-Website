@@ -54,7 +54,7 @@
 }
 
 .BannerTextTop {
-    font-size: clamp(1.5625rem, 0rem + 5vw, 3.125rem);
+    font-size: clamp(0rem, 5vw, 3rem);
     border: 4px solid black;
     border-bottom: 0px;
     border-top-left-radius: 25px;
@@ -71,7 +71,7 @@
 }
 
 .BannerTextBottom {
-    font-size: clamp(0.875rem, -0.125rem + 3.2vw, 1.875rem);
+    font-size: clamp(0rem, 3vw, 2rem);
     margin-top: -4px;
     border: 4px solid black;
     border-radius: 25px;
