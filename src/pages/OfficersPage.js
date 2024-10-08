@@ -47,7 +47,9 @@ export const OfficersPage = () => {
             and I am interested in working with medical devices, manufacturing, and innovation. I enjoy the process and potential of 3D printing, as the options are limitless.`
         },
         {
-            name: "Marcus Drienyovszky", role: "Education Co-Lead", picture: marcus, bio: ``
+            name: "Marcus Drienyovszky", role: "Education Co-Lead", picture: marcus, bio: `Hey! I'm Marcus, a Junior studying Mechanical Engineering. This is my third year in WOOF3D, 
+            and my second year as an officer. I am excited to help create and lead workshops this year and learn a lot in the process! 
+`
         },
         {
             name: "Joshua Levin", role: "Education Co-Lead", picture: joshua, bio: `Hi, I'm Joshua Levin. I'm a sophomore studying electrical and computer engineering. 
