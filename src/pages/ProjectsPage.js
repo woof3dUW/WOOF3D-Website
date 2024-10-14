@@ -58,6 +58,27 @@ export const ProjectsPage = () => {
     function scrollToTop() {
         window.scrollTo(0,0);
     }
+
+    const current = [
+        {
+            title: "Hydroponics"
+        }, 
+        {
+            title: "3D Printed Assisstive Tech"
+        },
+        {
+            title: "Fabrics"
+        },
+        {
+            title: "Casting"
+        },
+        {
+            title: "RC Drone"
+        },
+        {
+            title: "RC Vehicle"
+        }
+    ]
     
     const projects = [
         {
@@ -283,6 +304,10 @@ export const ProjectsPage = () => {
         <div className="Container">
             <Header/>
             <main className="MainContent" onLoad={scrollToTop()}>                
+                <h1 className="Head Center">Current Projects</h1>
+                {current.map((project, projectIndex) => (
+                    <div className="Text Center">{project.title}</div>
+                ))}
                 <h1 className="Head Center">Past Projects</h1>
                 {projects.map((project, projectIndex) => (
                     <div className="Row">

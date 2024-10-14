@@ -3,6 +3,7 @@ import { Footer } from "../components/Footer";
 import "./Page.css";
 import pompeiiMap from "./images/pompeiiRoom.png";
 import the8Map from "./images/the8.png";
+import env from "react-dotenv";
 
 export const HomePage = () => {
     function scrollToTop() {
@@ -58,7 +59,7 @@ export const HomePage = () => {
                         title="McMahonMap"
                         frameborder="0"
                         referrerpolicy="no-referrer-when-downgrade"
-                        src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCNgFy9uS2bSLkYBjubHqulgPEHCBnuU0w&q=4200+Little+Canoe+Channel+NE,Seattle,WA"
+                        src={`https://www.google.com/maps/embed/v1/place?key=${env.MAP_KEY}&q=4200+Little+Canoe+Channel+NE,Seattle,WA`}
                         allowfullscreen>
                     </iframe>
                     <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
