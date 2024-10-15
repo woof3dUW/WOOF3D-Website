@@ -61,22 +61,59 @@ export const ProjectsPage = () => {
 
     const current = [
         {
-            title: "Hydroponics"
+            title: "Hydroponics",
+            slides: [],
+            text: [
+                `Students will be working together to design and assemble a functional hydroponic tower. The tower would house a variety of plants to be chosen by the students. 
+                The tower will feature automated sensors for the management of soil chemistry, water levels, and general plant health. 
+                This project will encompass various skills such as: CAD, 3D printing, controls, electronics, and gardening.`
+            ]
         }, 
         {
-            title: "3D Printed Assisstive Tech"
+            title: "3D Printed Assisstive Tech", 
+            slides: [],
+            text: [
+                `This is a collaborative project with the Washington Assistive Technology Act Program (WATAP) and Husky Adapt. 
+                The Assistive Technology Support Technician for WATAP, Brennen Johnston, has reached out to Husky Adapt and WOOF3D 
+                to request help in the expansion of a design library of 3D printed assistive devices. Members of this project will work with Brennen to identify various needs for assistive technology, 
+                design devices to help address these needs, test these devices, and add final designs to an open source library for public use. 
+                Students will engage in the following skills: CAD, human centered design and engineering, electronics and programming. `
+            ]
         },
         {
-            title: "Fabrics"
+            title: "Fabrics", 
+            slides: [],
+            text: [
+                `This is the continuation of a project from last year which attempted to 3D print various clothing/wearables and fabrics. 
+                Members will each choose an article of wear to design, print, and test each quarter. Each item will be made to a specific theme with the larger goal of a complete outfit, 
+                fitted for any size to wear. Members will engage with the following skills: CAD and 3D printing  `
+            ]
         },
         {
-            title: "Casting"
+            title: "Casting", 
+            slides: [],
+            text: [
+                `This project aims at experimenting with various casting techniques, tools, and materials to create various objects. 
+                Students will use technologies like 3D printing or subtractive manufacturing to create molds and other tooling for casting. 
+                Students will perform repeat casts of the same object using different techniques and materials such as concrete, metal, resin, or plaster to compare casting quality and applications.`
+            ]
         },
         {
-            title: "RC Drone"
+            title: "RC Drone", 
+            slides: [],
+            text: [
+                `This project aims to explore the viability and design of a propeller drone with rotors which spin about the horizontal axis. 
+                Members will explore skills in: electronics, programming, CAD, 3D printing, and controls. `
+            ]
         },
         {
-            title: "RC Vehicle"
+            title: "RC Vehicle", 
+            slides: [],
+            text: [
+                `This project is a continuation of a project from last year which involved designing and 3D printing functional components for an RC vehicle. 
+                So far, the team has experimented with various prototype components of a remote control car. 
+                Along the way, unique concepts such as magnetic suspension and airless tires have been modeled and printed.`
+            ]
         }
     ]
     
@@ -103,9 +140,11 @@ export const ProjectsPage = () => {
                 {url: rcvehicle4, title: "rcvehicle4"}
             ], 
             text: [
-                `The casting project explored a diverse use case of 3D-printing and digital fabrication to convert 3D-printed prototypes 
-                to physical aluminum-casted objects. The goal was to design a model, sand or investment cast it with molten aluminum, 
-                and post-process it to form a durable and everlasting piece.`
+                `The RC Vehicle project has provided an opportunity for students to practice designing and 3D printing functional components. 
+                So far, the team has experimented with various prototype components of a remote control car. 
+                Along the way, unique concepts such as magnetic suspension and airless tires have been modeled and printed. 
+                In the future, the goal is to combine the individual components and ideas into a functional vehicle.
+`
             ]
         },
         {
@@ -306,7 +345,9 @@ export const ProjectsPage = () => {
             <main className="MainContent" onLoad={scrollToTop()}>                
                 <h1 className="Head Center">Current Projects</h1>
                 {current.map((project, projectIndex) => (
-                    <div className="Text Center">{project.title}</div>
+                    <Link className="Name Center" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
+                        <div>{project.title}</div>
+                    </Link> 
                 ))}
                 <h1 className="Head Center">Past Projects</h1>
                 {projects.map((project, projectIndex) => (

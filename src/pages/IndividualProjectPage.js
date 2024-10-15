@@ -19,7 +19,7 @@ export const IndividualProjectPage = () => {
             <main className="MainContent" onLoad={scrollToTop()}>
                 <div className="Section">
                     <h1 className="Head">{title}</h1>
-                    <div className="SliderContainer">
+                    <div className="SliderContainer" style={slides.length === 0 ? {display: "none"} : {}}>
                         <ImageSlider slides={slides}/>
                     </div>
                     <br/>
