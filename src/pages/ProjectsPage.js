@@ -345,9 +345,9 @@ export const ProjectsPage = () => {
             <main className="MainContent" onLoad={scrollToTop()}>                
                 <h1 className="Head Center">Current Projects</h1>
                 {current.map((project, projectIndex) => (
-                    <Link className="Name Center" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
-                        <div>{project.title}</div>
-                    </Link> 
+                        <Link className="Name Center" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
+                            <div>{project.title}</div>
+                        </Link> 
                 ))}
                 <h1 className="Head Center">Past Projects</h1>
                 {projects.map((project, projectIndex) => (
