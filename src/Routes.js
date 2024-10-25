@@ -6,12 +6,14 @@ import { OfficeHoursPage } from "./pages/OfficeHoursPage";
 import { FilamentPage } from "./pages/FilamentPage";
 import { ErrorPage } from "./pages/ErrorPage";
 import { IndividualProjectPage } from './pages/IndividualProjectPage';
+import { WorkshopsPage } from "./pages/WorkshopsPage";
 
 export const Routes = () => {    
     return (
         <BrowserRouter>
             <Switch>
                 <Route path="/" element={<HomePage/>}/>
+                <Route path="/workshops" element={<WorkshopsPage/>}/>
                 <Route path="/projects" element={<ProjectsPage/>}/>
                 <Route path="/projects/project" element={<IndividualProjectPage/>}/>
                 <Route path="/officers" element={<OfficersPage/>}/>

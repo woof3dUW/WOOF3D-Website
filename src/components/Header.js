@@ -8,6 +8,7 @@ export const Header = () => {
         <header className="Header">
             <Link className="HeaderText" to="/"><div className="HomeButton"><img className="HeaderImg" src={logo} alt="WOOF3D Logo"/>WOOF3D</div></Link>
             <div className="Navbar">
+                <Link className="NavItem" to="/workshops">Workshops</Link>
                 <Link className="NavItem" to="/projects">Projects</Link>
                 <Link className="NavItem" to="/officers">Officers</Link>
                 <Link className="NavItem" to="/officehours">Office Hours</Link>

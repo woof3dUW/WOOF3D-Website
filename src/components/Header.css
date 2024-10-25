@@ -43,7 +43,7 @@
     padding: 20px;
 }
 
-@media (max-width: 775px) {
+@media (max-width: 900px) {
     .Navbar {
         display: none;
     }
