@@ -47,7 +47,7 @@ export const WorkshopsPage = () => {
                 <h1 className="Head Center">Workshop Schedule</h1>
                 <div style={{width:"100%", display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
                     <table>
-                        <tr className="Text">
+                        <tr className="Text Data">
                             <th>Date</th>
                             <th>Name</th>
                         </tr>
