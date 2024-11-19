@@ -35,7 +35,7 @@ export const WorkshopsPage = () => {
         },
         {
             name: "Resin Printing",
-            date: "Nov 20, 5-6pm",
+            date: "Jan",
             link: ""
         },
     ]
