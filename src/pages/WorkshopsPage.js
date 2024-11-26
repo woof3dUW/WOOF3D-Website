@@ -16,22 +16,22 @@ export const WorkshopsPage = () => {
         {
             name: "Intro to CAD",
             date: "Oct 16, 5-6pm",
-            link: ""
+            link: "https://docs.google.com/presentation/d/1_vX72TM_TvEVHDvz_rW0p670tvd_18gTHykXOToss44/edit#slide=id.g2b4e4f69af7_0_3160"
         },
         {
             name: "Design Considerations for 3D Printing",
             date: "Oct 23, 5-6pm",
-            link: ""
+            link: "https://docs.google.com/presentation/d/1qhvUFcWAe31mPEButZt8EjAxWiHJ8li0grAywC_iJCU/edit#slide=id.g1ce369c80a8_0_590"
         },
         {
             name: "Laser Engraving",
             date: "Nov 6, 5-6pm",
-            link: ""
+            link: "https://docs.google.com/presentation/d/1hr__5F74fOsgkGYntQPEfWmTKv0bvqPDeegtPCSP1lw/edit#slide=id.g295a84519b9_2_968"
         },
         {
             name: "Casting and Lithophanes",
             date: "Nov 13, 5-6pm",
-            link: ""
+            link: "https://docs.google.com/presentation/d/1K-7KEg1H4HerRnCo5hVsLkSkxm-lh5A1zgeCJ7Gslxg/edit#slide=id.p"
         },
         {
             name: "Resin Printing",
