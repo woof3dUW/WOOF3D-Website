@@ -346,7 +346,7 @@ export const ProjectsPage = () => {
                 <h1 className="Head Center">Current Projects</h1>
                 <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
                     {current.map((project, projectIndex) => (
-                            <Link className="Name Center" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
+                            <Link className="Name Center Underline" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
                                 <div>{project.title}</div>
                             </Link> 
                     ))}
@@ -355,7 +355,7 @@ export const ProjectsPage = () => {
                 {projects.map((project, projectIndex) => (
                     <div className="Row">
                         <div className="RowSection" style={projectIndex % 2 === 0 ? {marginLeft: "auto"} : {marginRight: "auto"}}>
-                            <Link className="Name" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
+                            <Link className="Name Underline" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
                                 <div><img className="Portrait" src={project.slides.length > 0 ? project.slides[0].url : null} alt={project.title + " Image"}/>{project.title}</div>
                             </Link>
                         </div>

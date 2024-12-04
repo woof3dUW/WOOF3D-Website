@@ -118,7 +118,7 @@
     border-radius: 20px;
     background-color: rgb(75, 46, 131);
     text-decoration: none;
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 .Button:hover {
@@ -200,7 +200,7 @@
     text-decoration: none;
 }
 
-.Name:hover {
+.Underline:hover {
     text-decoration: underline;
 }
 
