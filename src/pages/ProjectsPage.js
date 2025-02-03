@@ -356,7 +356,7 @@ export const ProjectsPage = () => {
                     <div className="Row">
                         <div className="RowSection" style={projectIndex % 2 === 0 ? {marginLeft: "auto"} : {marginRight: "auto"}}>
                             <Link className="Name Underline" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
-                                <div><img className="Portrait" src={project.slides.length > 0 ? project.slides[0].url : null} alt={project.title + " Image"}/>{project.title}</div>
+                                <div className="Card"><img className="Portrait" src={project.slides.length > 0 ? project.slides[0].url : null} alt={project.title + " Image"}/>{project.title}</div>
                             </Link>
                         </div>
                     </div>

@@ -164,6 +164,17 @@
     text-align: center;
 }
 
+.Card {
+    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    border-radius: 10px;
+  }
+  
+.Card:hover {
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transform: scale(1.01);
+}
+
 @media (max-width: 1000px) {
     .Row {
         display: flex;
