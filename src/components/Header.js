@@ -6,7 +6,7 @@ import { Sidebar } from "./Sidebar";
 export const Header = () => {
     return (
         <header className="Header">
-            <Link className="HeaderText" to="/"><div className="HomeButton"><img className="HeaderImg" src={logo} alt="WOOF3D Logo"/>WOOF3D</div></Link>
+            <Link className="HeaderText" to="/"><div className="HomeButton"><link rel="preload" className="HeaderImg" as="image" href="woof3dlogo.png"/>WOOF3D</div></Link>
             <div className="Navbar">
                 <Link className="NavItem" to="/workshops">Workshops</Link>
                 <Link className="NavItem" to="/projects">Projects</Link>

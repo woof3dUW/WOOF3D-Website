@@ -6,7 +6,6 @@ import vash from "./images/vash.jpg";
 import joshua from "./images/joshua.jpg";
 import rory from "./images/rory.png";
 import giang from "./images/giang.jpg";
-import rhiannon from "./images/rhiannon.jpg";
 import nathan from "./images/nathan.jpg";
 import duy from "./images/duy.png";
 import kyle from "./images/kyle.jpeg";
@@ -55,10 +54,6 @@ export const OfficersPage = () => {
             name: "Joshua Levin", role: "Education Co-Lead", picture: joshua, bio: `Hi, I'm Joshua Levin. I'm a sophomore studying electrical and computer engineering. 
             Come join the club!`
         },
-        {
-            name: "Rhiannon Garnier", role: "Communications Director", picture: rhiannon, bio: `Hi! I'm Rhiannon and I am a sophomore in electrical and computer engineering. 
-            I love sailing and definitely want to 3D print some model boats. I am looking forward to a great year with the club!`
-        }
     ]
     
     return (
