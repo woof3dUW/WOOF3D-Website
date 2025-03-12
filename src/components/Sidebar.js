@@ -10,6 +10,7 @@ export const Sidebar = () => {
             <div className="Dim" style={visible ? {opacity: "75%", display: "block"} : {width: "0px", display: "none"}}></div>
             <div className="Sidebar" style={visible ? {width: "75%"} : {width: "0px"}}>
                 <div className="Close" onClick={() => setVisible(false)}>&times;</div>
+                <Link className="SideNavItem" to="/printers">Printers</Link>
                 <Link className="SideNavItem" to="/workshops">Workshops</Link>
                 <Link className="SideNavItem" to="/projects">Projects</Link>
                 <Link className="SideNavItem" to="/officers">Officers</Link>

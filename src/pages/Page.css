@@ -196,6 +196,12 @@
     border-radius: 10px;
 }
 
+.Image {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
 .OfficerText {
     font-size: 20px;
     font-family: 'Manrope';
