@@ -3,6 +3,7 @@ import { Footer } from "../components/Footer";
 import "./Page.css";
 import entryareaprinters from "./images/entryareaprinters.jpg";
 import workshopprinters from "./images/workshopprinters.jpg";
+import prusaxl from "./images/prusaxl.jpg";
 
 export const PrintersPage = () => {
     function scrollToTop() {
@@ -19,13 +20,16 @@ export const PrintersPage = () => {
                     <ul className="Text">
                         <li>6 Bambu Lab X1 Carbons*</li>
                         <li>3 Bambu Lab A1s</li>
+                        <li>1 Prusa XL</li>
                     </ul>
                     <div className="Text">All printers are housed in The 8 in McMahon Hall, in either the entry area or the WOOF3D space in the workshop.</div>
                     <div style={{marginRight: "auto", marginBottom: "2rem"}}>* Sponsored by STF</div>
                     <img className="Image" src={entryareaprinters} alt={"Entry Area Printers"}/>
-                    <div className="Role" style={{marginBottom: "2rem"}}>Entry Area Printers: 3 Bambu Lab X1 Carbons, 2 Bambu Lab A1s</div>
+                    <div className="Role" style={{marginBottom: "2rem"}}>3 Bambu Lab X1 Carbons and 2 Bambu Lab A1s in the entry area</div>
                     <img className="Image" src={workshopprinters} alt={"Workshop Printers"}/>
-                    <div className="Role">Workshop Printers: 3 Bambu Lab X1 Carbons</div>
+                    <div className="Role" style={{marginBottom: "2rem"}}>3 Bambu Lab X1 Carbons in the workshop</div>
+                    <img className="Image" src={prusaxl} alt={"Prusa XL"}/>
+                    <div className="Role" style={{marginBottom: "2rem"}}>Prusa XL in the workshop</div>
                 </div>
             </main>
             <Footer/>

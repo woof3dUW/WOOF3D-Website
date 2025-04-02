@@ -11,7 +11,7 @@ export const Sidebar = () => {
             <div className="Sidebar" style={visible ? {width: "75%"} : {width: "0px"}}>
                 <div className="Close" onClick={() => setVisible(false)}>&times;</div>
                 <Link className="SideNavItem" to="/printers">Printers</Link>
-                <Link className="SideNavItem" to="/workshops">Workshops</Link>
+                {/* <Link className="SideNavItem" to="/workshops">Workshops</Link> */}
                 <Link className="SideNavItem" to="/projects">Projects</Link>
                 <Link className="SideNavItem" to="/officers">Officers</Link>
                 <Link className="SideNavItem" to="/officehours">Office Hours</Link>

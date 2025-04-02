@@ -15,7 +15,7 @@ export const Routes = () => {
             <Switch>
                 <Route path="/" element={<HomePage/>}/>
                 <Route path="/printers" element={<PrintersPage/>}/>
-                <Route path="/workshops" element={<WorkshopsPage/>}/>
+                {/* <Route path="/workshops" element={<WorkshopsPage/>}/> */}
                 <Route path="/projects" element={<ProjectsPage/>}/>
                 <Route path="/projects/project" element={<IndividualProjectPage/>}/>
                 <Route path="/officers" element={<OfficersPage/>}/>
