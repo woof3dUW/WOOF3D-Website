@@ -3,56 +3,91 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { Link } from "react-router-dom";
 import "./Page.css";
-import volcano from "./images/volcano.jpg";
-import volcano2 from "./images/volcano2.jpg";
-import volcano3 from "./images/volcano3.jpg";
-import volcano4 from "./images/volcano4.jpg";
-import volcano5 from "./images/volcano5.jpg";
-import photogrammetry from "./images/photogrammetry.jpg";
-import photogrammetry2 from "./images/photogrammetry2.png";
-import photogrammetry3 from "./images/photogrammetry3.png";
-import photogrammetry4 from "./images/photogrammetry4.jpg";
-import ppp from "./images/ppp.png";
-import ppp2 from "./images/ppp2.jpg";
-import ppp3 from "./images/ppp3.jpg";
-import ppp4 from "./images/ppp4.png";
-import ppp5 from "./images/ppp5.jpg";
-import printing from "./images/printing.jpg";
-import kidney from "./images/kidney.png";
-import kidney2 from "./images/kidney2.jpg";
-import kidney3 from "./images/kidney3.png";
-import kidney4 from "./images/kidney4.png";
-import voxel from "./images/voxel.png";
-import voxel2 from "./images/voxel2.png";
-import turbine from "./images/turbine.jpg";
-import turbine2 from "./images/turbine2.jpg";
-import turbine3 from "./images/turbine3.jpg";
-import iro from "./images/iro.jpg";
-import iro2 from "./images/iro2.jpg";
-import mediumblue from "./images/mediumblue.jpg";
-import mediumblue2 from "./images/mediumblue2.jpg";
-import mediumblue3 from "./images/mediumblue3.jpg";
-import mediumblue4 from "./images/mediumblue4.jpg";
-import fossil from "./images/fossil.jpg";
-import fossil2 from "./images/fossil2.jpg";
-import fossil3 from "./images/fossil3.jpg";
-import fossil4 from "./images/fossil4.jpg";
-import droneteamone from "./images/droneteamone.jpg";
-import droneteamone2 from "./images/droneteamone2.jpg";
-import droneteamone3 from "./images/droneteamone3.jpg";
-import droneteamtwo from "./images/droneteamtwo.jpg";
-import droneteamtwo2 from "./images/droneteamtwo2.jpg"
-import casting from "./images/casting.jpg";
-import casting2 from "./images/casting2.jpg";
-import casting3 from "./images/casting3.jpg";
-import casting4 from "./images/casting4.jpg";
-import rcvehicle from "./images/rcvehicle.jpg";
-import rcvehicle2 from "./images/rcvehicle2.jpg";
-import rcvehicle3 from "./images/rcvehicle3.jpg";
-import rcvehicle4 from "./images/rcvehicle4.jpg";
-import iss from "./images/iss.png";
-import iss2 from "./images/iss2.jpg";
-import iss3 from "./images/iss3.jpg";
+import volcano from "./images/volcano/volcano.jpg";
+import volcano2 from "./images/volcano/volcano2.jpg";
+import volcano3 from "./images/volcano/volcano3.jpg";
+import volcano4 from "./images/volcano/volcano4.jpg";
+import volcano5 from "./images/volcano/volcano5.jpg";
+import photogrammetry from "./images/photogrammetry/photogrammetry.jpg";
+import photogrammetry2 from "./images/photogrammetry/photogrammetry2.png";
+import photogrammetry3 from "./images/photogrammetry/photogrammetry3.png";
+import photogrammetry4 from "./images/photogrammetry/photogrammetry4.jpg";
+import ppp from "./images/ppp/ppp.png";
+import ppp2 from "./images/ppp/ppp2.jpg";
+import ppp3 from "./images/ppp/ppp3.jpg";
+import ppp4 from "./images/ppp/ppp4.png";
+import ppp5 from "./images/ppp/ppp5.jpg";
+import printing from "./images/advancedprinting/printing.jpg";
+import kidney from "./images/kidney/kidney.png";
+import kidney2 from "./images/kidney/kidney2.jpg";
+import kidney3 from "./images/kidney/kidney3.png";
+import kidney4 from "./images/kidney/kidney4.png";
+import voxel from "./images/voxel/voxel.png";
+import voxel2 from "./images/voxel/voxel2.png";
+import turbine from "./images/turbine/turbine.jpg";
+import turbine2 from "./images/turbine/turbine2.jpg";
+import turbine3 from "./images/turbine/turbine3.jpg";
+import iro from "./images/iro/iro.jpg";
+import iro2 from "./images/iro/iro2.jpg";
+import mediumblue from "./images/mediumblue/mediumblue.jpg";
+import mediumblue2 from "./images/mediumblue/mediumblue2.jpg";
+import mediumblue3 from "./images/mediumblue/mediumblue3.jpg";
+import mediumblue4 from "./images/mediumblue/mediumblue4.jpg";
+import fossil from "./images/fossil/fossil.jpg";
+import fossil2 from "./images/fossil/fossil2.jpg";
+import fossil3 from "./images/fossil/fossil3.jpg";
+import fossil4 from "./images/fossil/fossil4.jpg";
+import droneteamone from "./images/droneteamone/droneteamone.jpg";
+import droneteamone2 from "./images/droneteamone/droneteamone2.jpg";
+import droneteamone3 from "./images/droneteamone/droneteamone3.jpg";
+import droneteamtwo from "./images/droneteamtwo/droneteamtwo.jpg";
+import droneteamtwo2 from "./images/droneteamtwo/droneteamtwo2.jpg"
+import casting from "./images/casting/casting.jpg";
+import casting2 from "./images/casting/casting2.jpg";
+import casting3 from "./images/casting/casting3.jpg";
+import casting4 from "./images/casting/casting4.jpg";
+import rcvehicle from "./images/rcvehicle/rcvehicle.jpg";
+import rcvehicle2 from "./images/rcvehicle/rcvehicle2.jpg";
+import rcvehicle3 from "./images/rcvehicle/rcvehicle3.jpg";
+import rcvehicle4 from "./images/rcvehicle/rcvehicle4.jpg";
+import iss from "./images/iss/iss.png";
+import iss2 from "./images/iss/iss2.jpg";
+import iss3 from "./images/iss/iss3.jpg";
+import hydroponics from "./images/hydroponics/hydroponics.png";
+import hydroponics2 from "./images/hydroponics/hydroponics2.png";
+import assist from "./images/assist/assist.jpg";
+import assist2 from "./images/assist/assist2.png";
+import assist3 from "./images/assist/assist3.jpg";
+import assist4 from "./images/assist/assist4.png";
+import assist5 from "./images/assist/assist5.png";
+import assist6 from "./images/assist/assist6.png";
+import assist7 from "./images/assist/assist7.png";
+import assist8 from "./images/assist/assist8.png";
+import assist9 from "./images/assist/assist9.png";
+import assist10 from "./images/assist/assist10.png";
+import assist11 from "./images/assist/assist11.png";
+import assist12 from "./images/assist/assist12.png";
+import assist13 from "./images/assist/assist13.png";
+import assist14 from "./images/assist/assist14.png";
+import assist15 from "./images/assist/assist15.png";
+import assist16 from "./images/assist/assist16.png";
+import assist17 from "./images/assist/assist17.png";
+import fabrics from "./images/fabrics/fabrics.png";
+import fabrics2 from "./images/fabrics/fabrics2.png";
+import fabrics3 from "./images/fabrics/fabrics3.png";
+import fabrics4 from "./images/fabrics/fabrics4.png";
+import fabrics5 from "./images/fabrics/fabrics5.png";
+import cast from "./images/casting2/casting.png";
+import cast2 from "./images/casting2/casting2.png";
+import cast3 from "./images/casting2/casting3.png";
+import cast4 from "./images/casting2/casting4.png";
+import rcdrone from "./images/rcdrone/rcdrone.png";
+import rcdrone2 from "./images/rcdrone/rcdrone2.png";
+import rccar from "./images/rcvehicle2/rccar.png";
+import rccar2 from "./images/rcvehicle2/rccar2.png";
+import rccar3 from "./images/rcvehicle2/rccar3.png";
+import rccar4 from "./images/rcvehicle2/rccar4.png";
+import rccar5 from "./images/rcvehicle2/rccar5.png";
 
 export const ProjectsPage = () => {    
     function scrollToTop() {
@@ -62,57 +97,102 @@ export const ProjectsPage = () => {
     const current = [
         {
             title: "Hydroponics",
-            slides: [],
+            slides: [
+                {url: hydroponics, title: "hydroponics"},
+                {url: hydroponics2, title: "hydroponics2"}
+            ],
             text: [
-                `Students will be working together to design and assemble a functional hydroponic tower. The tower would house a variety of plants to be chosen by the students. 
+                `Students are working together to design and assemble a functional hydroponic tower. The tower will house duckweed. 
                 The tower will feature automated sensors for the management of soil chemistry, water levels, and general plant health. 
-                This project will encompass various skills such as: CAD, 3D printing, controls, electronics, and gardening.`
+                This project encompasses various skills such as: CAD, 3D printing, controls, electronics, and gardening.
+                So far, students have 3D printed parts for a frame, and designed tools and a tool changing mechanism.`
             ]
         }, 
         {
             title: "3D Printed Assisstive Tech", 
-            slides: [],
+            slides: [
+                {url: assist, title: "assist"},
+                {url: assist2, title: "assist2"},
+                {url: assist3, title: "assist3"},
+                {url: assist4, title: "assist4"},
+                {url: assist5, title: "assist5"},
+                {url: assist6, title: "assist6"},
+                {url: assist7, title: "assist7"},
+                {url: assist8, title: "assist8"},
+                {url: assist9, title: "assist9"},
+                {url: assist10, title: "assist10"},
+                {url: assist11, title: "assist11"},
+                {url: assist12, title: "assist12"},
+                {url: assist13, title: "assist13"},
+                {url: assist14, title: "assist14"},
+                {url: assist15, title: "assist15"},
+                {url: assist16, title: "assist16"},
+                {url: assist17, title: "assist17"},
+            ],
             text: [
                 `This is a collaborative project with the Washington Assistive Technology Act Program (WATAP) and Husky Adapt. 
                 The Assistive Technology Support Technician for WATAP, Brennen Johnston, has reached out to Husky Adapt and WOOF3D 
-                to request help in the expansion of a design library of 3D printed assistive devices. Members of this project will work with Brennen to identify various needs for assistive technology, 
+                to request help in the expansion of a design library of 3D printed assistive devices. Members of this project are working with Brennen to identify various needs for assistive technology, 
                 design devices to help address these needs, test these devices, and add final designs to an open source library for public use. 
                 Students will engage in the following skills: CAD, human centered design and engineering, electronics and programming. `
             ]
         },
         {
             title: "Fabrics", 
-            slides: [],
+            slides: [
+                {url: fabrics, title: "fabrics"},
+                {url: fabrics2, title: "fabrics2"},
+                {url: fabrics3, title: "fabrics3"},
+                {url: fabrics4, title: "fabrics4"},
+                {url: fabrics5, title: "fabrics5"},
+
+            ],
             text: [
                 `This is the continuation of a project from last year which attempted to 3D print various clothing/wearables and fabrics. 
-                Members will each choose an article of wear to design, print, and test each quarter. Each item will be made to a specific theme with the larger goal of a complete outfit, 
-                fitted for any size to wear. Members will engage with the following skills: CAD and 3D printing  `
+                Members each chose an article of wear to design, print, and test. Members will engage with the following skills: CAD and 3D printing  `
             ]
         },
         {
             title: "Casting", 
-            slides: [],
+            slides: [
+                {url: cast, title: "casting"},
+                {url: cast2, title: "casting2"},
+                {url: cast3, title: "casting3"},
+                {url: cast4, title: "casting4"},
+            ],
             text: [
                 `This project aims at experimenting with various casting techniques, tools, and materials to create various objects. 
-                Students will use technologies like 3D printing or subtractive manufacturing to create molds and other tooling for casting. 
-                Students will perform repeat casts of the same object using different techniques and materials such as concrete, metal, resin, or plaster to compare casting quality and applications.`
+                Students spent fall quarter experimenting with silicone and resin casting, as well as 3D printing molds and casting silicone molds.
+                During winter and spring quarters, students have been working with a UW faculty member to design a model to be casted
+                with aluminum.`
             ]
         },
         {
             title: "RC Drone", 
-            slides: [],
+            slides: [
+                {url: rcdrone, title: "rcdrone"},
+                {url: rcdrone2, title: "rcdrone2"},
+            ],
             text: [
-                `This project aims to explore the viability and design of a propeller drone with rotors which spin about the horizontal axis. 
+                `This project aims to explore the viability and design of both a compact FPV drone and a cycloidal drone with propellers that 
+                rotate around the horizontal axis.
                 Members will explore skills in: electronics, programming, CAD, 3D printing, and controls. `
             ]
         },
         {
             title: "RC Vehicle", 
-            slides: [],
+            slides: [
+                {url: rccar, title: "rcvehicle"},
+                {url: rccar2, title: "rcvehicle2"},
+                {url: rccar3, title: "rcvehicle3"},
+                {url: rccar4, title: "rcvehicle4"},
+                {url: rccar5, title: "rcvehicle5"},
+            ],
             text: [
                 `This project is a continuation of a project from last year which involved designing and 3D printing functional components for an RC vehicle. 
                 So far, the team has experimented with various prototype components of a remote control car. 
-                Along the way, unique concepts such as magnetic suspension and airless tires have been modeled and printed.`
+                Along the way, unique concepts such as magnetic suspension and airless tires have been modeled and printed.
+                This year, the team has designed a new chassis and experimented with casting tires out of TPU and silicone.`
             ]
         }
     ]
@@ -344,13 +424,23 @@ export const ProjectsPage = () => {
             <Header/>
             <main className="MainContent" onLoad={scrollToTop()}>                
                 <h1 className="Head Center">Current Projects</h1>
+                {current.map((project, projectIndex) => (
+                    <div className="Row">
+                        <div className="RowSection" style={projectIndex % 2 === 0 ? {marginLeft: "auto"} : {marginRight: "auto"}}>
+                            <Link className="Name Underline" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
+                                <div className="Card"><img className="Portrait" src={project.slides.length > 0 ? project.slides[0].url : null} alt={project.title + " Image"}/>{project.title}</div>
+                            </Link>
+                        </div>
+                    </div>
+                ))}
+                {/* use when no images are available
                 <div style={{display: "flex", alignItems: "center", justifyContent: "center", flexDirection: "column"}}>
                     {current.map((project, projectIndex) => (
                             <Link className="Name Center Underline" to="/projects/project" state={{title: project.title, slides: project.slides, text: project.text}}>
                                 <div>{project.title}</div>
                             </Link> 
                     ))}
-                </div>
+                </div> */}
                 <h1 className="Head Center">Past Projects</h1>
                 {projects.map((project, projectIndex) => (
                     <div className="Row">
