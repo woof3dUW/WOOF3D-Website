@@ -23,7 +23,7 @@ export const PrintersPage = () => {
                         <li>1 Prusa XL</li>
                     </ul>
                     <div className="Text">All printers are housed in The 8 in McMahon Hall, in either the entry area or the WOOF3D space in the workshop.</div>
-                    <div style={{marginRight: "auto", marginBottom: "2rem"}}>* Sponsored by STF</div>
+                    <div style={{marginRight: "auto", marginBottom: "2rem"}}>* Funded by the Student Technology Fee</div>
                     <img className="Image" src={entryareaprinters} alt={"Entry Area Printers"}/>
                     <div className="Role" style={{marginBottom: "2rem"}}>3 Bambu Lab X1 Carbons and 2 Bambu Lab A1s in the entry area</div>
                     <img className="Image" src={workshopprinters} alt={"Workshop Printers"}/>
