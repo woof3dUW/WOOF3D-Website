@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "./Header.css";
-import logo from "./woof3dlogo.png"
+import logo from "../images/woof3dlogo.png"
 import { Sidebar } from "./Sidebar";
 
 export const Header = () => {

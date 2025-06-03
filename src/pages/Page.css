@@ -27,7 +27,7 @@
 }
 
 .Text {
-    font-size: 25px;
+    font-size: 20px;
     font-family: 'Manrope';
     margin-top: 10px;
 }
@@ -44,7 +44,7 @@
 .Banner {
     width: 100%;
     height: 40vh;
-    background: url("images/banner.png");
+    background: url("../images/homepage/banner.png");
     font-family: ManropeBold;
     display: flex;
     flex-direction: column;
@@ -165,7 +165,7 @@
 }
 
 .Card {
-    transition: box-shadow 0.25s ease-in-out, transform 0.25s ease-in-out;
+    transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
     border-radius: 10px;
   }
   

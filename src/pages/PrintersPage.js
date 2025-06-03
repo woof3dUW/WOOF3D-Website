@@ -1,9 +1,9 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Page.css";
-import entryareaprinters from "./images/entryareaprinters.jpg";
-import workshopprinters from "./images/workshopprinters.jpg";
-import prusaxl from "./images/prusaxl.jpg";
+import entryareaprinters from "../images/printers/entryareaprinters.jpg";
+import workshopprinters from "../images/printers/workshopprinters.jpg";
+import prusaxl from "../images/printers/prusaxl.jpg";
 
 export const PrintersPage = () => {
     function scrollToTop() {

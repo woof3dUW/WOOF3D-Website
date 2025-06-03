@@ -2,14 +2,14 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Page.css";
-import vash from "./images/vash.jpg";
-import joshua from "./images/joshua.jpg";
-import rory from "./images/rory.png";
-import giang from "./images/giang.jpg";
-import nathan from "./images/nathan.jpg";
-import duy from "./images/duy.png";
-import kyle from "./images/kyle.jpeg";
-import marcus from "./images/marcus.jpeg";
+import vash from "../images/officers/vash.jpg";
+import joshua from "../images/officers/joshua.jpg";
+import rory from "../images/officers/rory.png";
+import giang from "../images/officers/giang.jpg";
+import nathan from "../images/officers/nathan.jpg";
+import duy from "../images/officers/duy.png";
+import kyle from "../images/officers/kyle.jpeg";
+import marcus from "../images/officers/marcus.jpeg";
 
 export const OfficersPage = () => {
     function scrollToTop() {

@@ -1,8 +1,8 @@
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import "./Page.css";
-import pompeiiMap from "./images/pompeiiRoom.png";
-import the8Map from "./images/the8.png";
+import pompeiiMap from "../images/homepage/pompeiiRoom.png";
+import the8Map from "../images/homepage/the8.png";
 import env from "react-dotenv";
 
 export const HomePage = () => {
