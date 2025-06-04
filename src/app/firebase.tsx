@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { collection, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore";
+import { addDoc, collection, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBx1V98fN_NV_LtT-RKgu2nVkIb0kyJssc",
@@ -48,4 +48,16 @@ export async function fetchProjectByName(name: string) {
     } catch (error) {
         alert(error);
     }
+}
+
+export async function addProject(title: string, slides: string[], text: string[]) {
+    try {
+        const docRef = await addDoc(collection(db, "projects"), {
+            title: title,
+            slides: slides,
+            text: text
+        });
+    } catch (error) {
+        alert(error); 
+    } 
 }

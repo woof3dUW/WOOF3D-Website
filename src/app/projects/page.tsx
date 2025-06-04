@@ -7,7 +7,8 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { fetchProjects, Project } from "../firebase";
+import { addProject, fetchProjects, Project } from "../firebase";
+import { upload } from "@vercel/blob/client";
 
 const current = [
     {
@@ -335,12 +336,26 @@ const projects = [
     }
 ];
 
+function AddProjects() {
+    current.forEach(async (project, projectIndex) => {
+        if (projectIndex == 1) {
+            project.slides.forEach(async (slide) => {
+                const imageStream = (await fetch(slide)).body;
+                if (imageStream) {
+                    const blob = await upload(slide, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
+                    project.slides[project.slides.indexOf(slide)] = blob.url;
+                }
+            })
+            await addProject(project.title, project.slides, project.text);
+        }
+    });
+}
+
 function DisplayArray(array: {title: string, slides: string[], text: string[]}[]) {
-    return array.map((project, projectIndex) => (
-        <div className="Row" key={projectIndex}>
-            <div className="RowSection" style={projectIndex % 2 === 0 ? {marginLeft: "auto"} : {marginRight: "auto"}}>
-                <Link className="Name Underline" href={`/projects/${project.title}`}>
-                    <div>
+    return (
+        <div className="Grid">
+            {array.map((project, projectIndex) => (
+                <Link className="Name Underline GridItem" href={`/projects/${project.title}`} key={projectIndex}>
                         {project.slides.length > 0
                             ?
                             <Image className="Portrait Card" src={project.slides[0]} width={400} height={400} alt={project.title + " Image"}/>
@@ -348,11 +363,10 @@ function DisplayArray(array: {title: string, slides: string[], text: string[]}[]
                             <></>
                         }
                         {project.title}
-                    </div>
                 </Link>
-            </div>
+            ))}
         </div>
-    ));
+    );
 }
 
 export default function ProjectsPage() {

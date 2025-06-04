@@ -41,6 +41,7 @@
     text-decoration-color: rgb(218, 201, 255);
     text-decoration-thickness: 4px;
     margin-bottom: 0px;
+    margin-top: 30px;
 }
 
 .Banner {
@@ -148,28 +149,9 @@
     max-width: 800px;
 }
 
-.Row {
-    margin-top: 50px;
-    width: 50%;
-    text-align: center;
-    display: inline-flex;
-    justify-content: center;
-    vertical-align: top;
-}
-
-.RowSection {
-    max-width: 400px;
-    width: 100%;
-    margin-left: 50px;
-    margin-right: 50px;
-    margin-bottom: 50px;
-    text-align: center;
-}
-
 .Card {
     transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
-    border-radius: 10px;
-  }
+}
   
 .Card:hover {
     --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
@@ -177,23 +159,10 @@
     transform: scale(1.01);
 }
 
-@media (max-width: 1000px) {
-    .Row {
-        display: flex;
-        justify-content: center;
-        width: 100%;
-    }
-
-    .RowSection {
-        margin-left: 5% !important;
-        margin-right: 5% !important;
-    }
-}
-
 .Portrait {
     aspect-ratio: 1 / 1;
     width: 100%;
-    /* max-width: 400px; */
+    max-width: 400px;
     object-fit: cover;
     border-radius: 10px;
 }
@@ -258,4 +227,25 @@
 
 button {
     cursor: pointer;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .Grid {
+      grid-template-columns: 400px;
+    }
+}
+
+.GridItem {
+    width: 400px;
 }

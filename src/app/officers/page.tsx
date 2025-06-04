@@ -54,16 +54,16 @@ export default function OfficersPage() {
             <Header />
             <main className="MainContent">
                 <h1 className="Head Center">Meet Our Officers</h1>
-                {officers.map((officer, officerIndex) => (
-                    <div className="Row" key={officerIndex}>
-                        <div className="RowSection" style={officerIndex % 2 === 0 ? {marginLeft: "auto"} : {marginRight: "auto"}}>
+                <div className="Grid">
+                    {officers.map((officer, officerIndex) => (
+                        <div className="GridItem" key={officerIndex}>
                             <img className="Portrait" src={officer.picture} alt={officer.name + " Image"}/>
                             <div className="Name">{officer.name}</div>
                             <div className="Role">{officer.role}</div>
                             <p className="OfficerText">{officer.bio}</p>
                         </div>
-                    </div>
-                ))}
+                    ))}
+                </div>
             </main>
             <Footer />
         </div>
