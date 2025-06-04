@@ -1,16 +1,11 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import "./Page.css";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
 
-export const FilamentPage = () => {
-    function scrollToTop() {
-        window.scrollTo(0,0);
-    }
-    
+export default function FilamentPage() {
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent" onLoad={scrollToTop()}>
+            <main className="MainContent">
                 <div className="Section">
                     <h1 className="Head">Filament Checkout</h1>
                     <div className="ButtonDiv"><a href="https://forms.gle/stgn2hyCwRNGDv6QA" className="Button" target="_blank" rel="noreferrer noopener">Checkout Form</a></div>

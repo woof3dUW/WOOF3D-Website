@@ -1,19 +1,14 @@
-import { Header } from "../components/Header";
-import { Footer } from "../components/Footer";
-import "./Page.css";
-import pompeiiMap from "../images/homepage/pompeiiRoom.png";
-import the8Map from "../images/homepage/the8.png";
-import env from "react-dotenv";
+"use client"
 
-export const HomePage = () => {
-    function scrollToTop() {
-        window.scrollTo(0,0);
-    }  
-    
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Image from "next/image";
+
+export default function HomePage() {
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent" onLoad={scrollToTop()}>
+            <main className="MainContent">
                 <div className="Banner">
                     <h1 className="BannerTextTop">Welcome to WOOF3D</h1>
                     <h1 className="BannerTextBottom">The 3D Printing Club at the University of Washington</h1>
@@ -57,15 +52,14 @@ export const HomePage = () => {
                     <iframe
                         className="MapImg Embed"
                         title="McMahonMap"
-                        frameborder="0"
-                        referrerpolicy="no-referrer-when-downgrade"
-                        src={`https://www.google.com/maps/embed/v1/place?key=${env.MAP_KEY}&q=4200+Little+Canoe+Channel+NE,Seattle,WA`}
-                        allowfullscreen>
+                        referrerPolicy="no-referrer-when-downgrade"
+                        src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAP_KEY}&q=4200+Little+Canoe+Channel+NE,Seattle,WA`}
+                        allowFullScreen>
                     </iframe>
                     <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
-                    <img className="MapImg" src={pompeiiMap} alt="Map to the Pompeii Room"/>
+                    <Image className="MapImg" src={"/homepage/pompeiiRoom.png"} width={800} height={484} alt="Map to the Pompeii Room"/>
                     <p className="Text">The club printers and filament are in The 8 makerspace on the basement floor on the South side of McMahon</p>
-                    <img className="MapImg" src={the8Map} alt="Map to The 8"/>
+                    <Image className="MapImg" src={"/homepage/the8.png"} width={800} height={484} alt="Map to The 8"/>
                 </div>
             </main>
             <Footer/>

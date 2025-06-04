@@ -1,7 +1,11 @@
 import { useState } from "react";
 import "./ImageSlider.css";
 
-export const ImageSlider = ({slides}) => {
+interface ImageSliderProps {
+  slides: string[];
+}
+
+export default function ImageSlider({slides}: ImageSliderProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
     
     if (slides.length === 0) return <></>;
@@ -19,7 +23,7 @@ export const ImageSlider = ({slides}) => {
     }
     
     const slideBackground = {
-        backgroundImage: `url(${slides[currentIndex].url})`
+        backgroundImage: `url(${slides[currentIndex]})`
     }
 
     const selected = {
