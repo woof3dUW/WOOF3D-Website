@@ -13,7 +13,7 @@ export default function Header() {
         <header className="Header">
             <Link className="HeaderText" href={"/"}>
                 <div className="HomeButton">
-                    <Image className="HeaderImg" src={"https://e7p5otmxhkgxkbgu.public.blob.vercel-storage.com/woof3dlogo-atXurNtgkTrDUPyOacb9OZJwPH2kpX.png"} width={55} height={55} alt="Club Logo" />
+                    <Image className="HeaderImg" src={"/woof3dlogo.png"} width={55} height={55} alt="Club Logo" />
                     WOOF3D
                 </div>
             </Link>

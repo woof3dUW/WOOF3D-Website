@@ -336,17 +336,21 @@ const projects = [
     }
 ];
 
-function AddProjects() {
-    current.forEach(async (project, projectIndex) => {
-        if (projectIndex == 1) {
-            project.slides.forEach(async (slide) => {
+async function AddProjects() {
+    projects.forEach(async (project, projectIndex) => {
+        if (true) {
+            let urlSlides: string[] = [];
+            for (let slideIndex = 0; slideIndex < project.slides.length; slideIndex++) {
+                const slide = project.slides[slideIndex];
                 const imageStream = (await fetch(slide)).body;
                 if (imageStream) {
                     const blob = await upload(slide, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
-                    project.slides[project.slides.indexOf(slide)] = blob.url;
+                    urlSlides[slideIndex] = blob.url;
+                    console.log("blob url: " + blob.url);
                 }
-            })
-            await addProject(project.title, project.slides, project.text);
+            }
+            console.log("starting add project");
+            await addProject(project.title, urlSlides, project.text, false);
         }
     });
 }
@@ -370,13 +374,19 @@ function DisplayArray(array: {title: string, slides: string[], text: string[]}[]
 }
 
 export default function ProjectsPage() {
-    const [projectArr, setProjectArr] = useState<Project[]>([]);
+    const [currProjectArr, setCurrProjectArr] = useState<Project[]>([]);
+    const [pastProjectArr, setPastProjectArr] = useState<Project[]>([]);
 
     useEffect(() => {
         try {
-            fetchProjects().then((projs) => {
-                if (projs) {
-                    setProjectArr(projs);
+            fetchProjects(true).then((currProjs) => {
+                if (currProjs) {
+                    setCurrProjectArr(currProjs);
+                }
+            });
+            fetchProjects(false).then((pastProjs) => {
+                if (pastProjs) {
+                    setPastProjectArr(pastProjs);
                 }
             });
         } catch (error) {
@@ -389,9 +399,9 @@ export default function ProjectsPage() {
             <Header/>
             <main className="MainContent">                
                 <h1 className="Head Center">Current Projects</h1>
-                {DisplayArray(current)}
+                {DisplayArray(currProjectArr)}
                 <h1 className="Head Center">Past Projects</h1>
-                {DisplayArray(projectArr)}
+                {DisplayArray(pastProjectArr)}
             </main>
             <Footer/>
         </div>

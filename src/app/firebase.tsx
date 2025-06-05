@@ -24,9 +24,17 @@ export type Project = {
     text: string[];
 }
 
-export async function fetchProjects() {
+export type Officer = {
+    name: string;
+    role: string;
+    picture: string;
+    bio: string;
+    rank: number;
+}
+
+export async function fetchProjects(current: boolean) {
     try {
-        const querySnapshot = await getDocs(query(collection(db, "projects"), orderBy("title", "asc")));
+        const querySnapshot = await getDocs(query(collection(db, "projects"), where("current", "==", current), orderBy("title", "asc")));
         const projectArr: Project[] = [];
         querySnapshot.forEach((doc) => {
             projectArr.push(doc.data() as Project);
@@ -50,14 +58,42 @@ export async function fetchProjectByName(name: string) {
     }
 }
 
-export async function addProject(title: string, slides: string[], text: string[]) {
+export async function addProject(title: string, slides: string[], text: string[], current: boolean) {
     try {
-        const docRef = await addDoc(collection(db, "projects"), {
+        await addDoc(collection(db, "projects"), {
             title: title,
             slides: slides,
-            text: text
+            text: text,
+            current: current
         });
     } catch (error) {
         alert(error); 
     } 
+}
+
+export async function addOfficer(name: string, role: string, picture: string, bio: string, rank: number) {
+    try {
+        await addDoc(collection(db, "officers"), {
+            name: name,
+            role: role,
+            picture: picture,
+            bio: bio,
+            rank: rank
+        });
+    } catch (error) {
+        alert(error); 
+    } 
+}
+
+export async function fetchOfficers() {
+    try {
+        const querySnapshot = await getDocs(query(collection(db, "officers"), orderBy("rank", "asc")));
+        const officerArr: Officer[] = [];
+        querySnapshot.forEach((doc) => {
+            officerArr.push(doc.data() as Officer);
+        });
+        return officerArr;
+    } catch (error) {
+        alert(error);
+    }
 }

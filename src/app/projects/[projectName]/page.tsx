@@ -13,11 +13,10 @@ export default function IndividualProjectPage() {
 
     useEffect(() => {
         try {
-            const projectName = pathname.split("/").pop();
-            console.log(projectName);
+            const urlProjectName = pathname.split("/").pop();
+            const projectName = decodeURIComponent(urlProjectName || "");
             if (projectName) {
                 fetchProjectByName(projectName).then((proj) => {
-                    console.log(proj);
                     if (proj) {
                         setProject(proj);
                     }
@@ -53,7 +52,7 @@ export default function IndividualProjectPage() {
                                 <></>
                                 :
                                 project.text.map((paragraph, num) => (
-                                    <p className="Text" key={num} style={{marginTop: "20px"}}>{paragraph}</p>
+                                    <p className="Text" key={num} style={{marginTop: "20px", whiteSpace: "pre-line"}}>{paragraph}</p>
                                 ))
                             }
                         </div>

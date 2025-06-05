@@ -2,7 +2,9 @@
 
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { addOfficer, addProject, fetchOfficers, Officer } from "../firebase";
+import { upload } from "@vercel/blob/client";
 
 const officers = [
     {
@@ -44,15 +46,42 @@ const officers = [
     },
 ];
 
+async function AddOfficers() {
+    officers.forEach(async (officer, officerIndex) => {
+        if (officerIndex === 4) {
+            let url: string = "";
+            const imageStream = (await fetch(officer.picture)).body;
+            if (imageStream) {
+                const blob = await upload(officer.picture, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
+                url = blob.url;
+                console.log("blob url: " + blob.url);
+            }
+            console.log("starting add officer");
+            await addOfficer(officer.name, officer.role, url, officer.bio, officerIndex + 1);
+        }
+    });
+}
+
 export default function OfficersPage() {
+    const [officers, setOfficers] = useState<Officer[]>([]);
+
     useEffect(() => {
-        window.scrollTo(0, 0);
+        try {
+            fetchOfficers().then((offs) => {
+                if (offs) {
+                    setOfficers(offs);
+                }
+            });
+        } catch (error) {
+            alert(error);
+        }
     }, []);
 
     return (
         <div className="Container">
             <Header />
             <main className="MainContent">
+                <button onClick={() => AddOfficers()}>Add Officers</button>
                 <h1 className="Head Center">Meet Our Officers</h1>
                 <div className="Grid">
                     {officers.map((officer, officerIndex) => (
