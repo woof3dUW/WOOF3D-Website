@@ -81,7 +81,6 @@ export default function OfficersPage() {
         <div className="Container">
             <Header />
             <main className="MainContent">
-                <button onClick={() => AddOfficers()}>Add Officers</button>
                 <h1 className="Head Center">Meet Our Officers</h1>
                 <div className="Grid">
                     {officers.map((officer, officerIndex) => (

@@ -121,7 +121,7 @@
     border-radius: 20px;
     background-color: rgb(75, 46, 131);
     text-decoration: none;
-    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
 .Button:hover {
@@ -248,4 +248,85 @@ button {
 
 .GridItem {
     width: 400px;
+}
+
+.Input {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.SmallButton {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.SmallButton:hover {
+    background-color: rgb(218, 201, 255);
+    color: rgb(75, 46, 131);
+}
+
+.EditCard {
+    width: 50%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.EditButton {
+    position: absolute;
+    right: -20px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.EditButton:hover {
+    background-color: rgb(218, 201, 255);
+}
+
+.DeleteButton {
+    top: 10px;
+}
+
+.UpButton {
+    top: 60px;
+}
+
+.DownButton {
+    top: 110px;
+}
+
+.AddButton {
+    position: static;
+}
+
+.CornerButton {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    height: 40px;
+    width: 80px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.CornerButton:hover {
+    background-color: rgb(218, 201, 255);
+}
+
+.BackButton {
+    right: 120px;
+    width: 100px;
 }

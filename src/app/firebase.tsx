@@ -1,6 +1,7 @@
+import { del } from "@vercel/blob";
 import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
-import { addDoc, collection, getDocs, getFirestore, orderBy, query, where } from "firebase/firestore";
+import { addDoc, collection, deleteDoc, doc, getDocs, getFirestore, orderBy, query, updateDoc, where } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBx1V98fN_NV_LtT-RKgu2nVkIb0kyJssc",
@@ -25,6 +26,7 @@ export type Project = {
 }
 
 export type Officer = {
+    id: string;
     name: string;
     role: string;
     picture: string;
@@ -90,9 +92,39 @@ export async function fetchOfficers() {
         const querySnapshot = await getDocs(query(collection(db, "officers"), orderBy("rank", "asc")));
         const officerArr: Officer[] = [];
         querySnapshot.forEach((doc) => {
-            officerArr.push(doc.data() as Officer);
+            officerArr.push({ ...(doc.data() as Officer), id: doc.id });
         });
         return officerArr;
+    } catch (error) {
+        alert(error);
+    }
+}
+
+export async function removeOfficer(id: string) {
+    try {
+        await deleteDoc(doc(db, "officers", id));
+    } catch (error) {
+        alert(error);
+    }
+}
+
+export async function updateOfficer(id: string, name: string, role: string, picture: string, bio: string, rank: number) {
+    try {
+        await updateDoc(doc(db, "officers", id), {
+            name: name,
+            role: role,
+            picture: picture,
+            bio: bio,
+            rank: rank
+        });
+    } catch (error) {
+        alert(error);
+    }
+}
+
+export async function deleteBlob(url: string) {
+    try {
+        await del(url);
     } catch (error) {
         alert(error);
     }
