@@ -3,7 +3,6 @@
 import "./Header.css";
 import Image from "next/image";
 import Sidebar from "./Sidebar";
-import { useRouter } from 'next/navigation'; 
 import Link from "next/link";
 
 export default function Header() {

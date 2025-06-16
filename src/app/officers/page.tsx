@@ -3,8 +3,9 @@
 import Header from "../../components/Header";
 import Footer from "../../components/Footer";
 import { useEffect, useState } from "react";
-import { addOfficer, addProject, fetchOfficers, Officer } from "../firebase";
-import { upload } from "@vercel/blob/client";
+import { fetchOfficers, Officer } from "../firebase";
+// import { upload } from "@vercel/blob/client";
+import Image from "next/image";
 
 const officers = [
     {
@@ -46,21 +47,21 @@ const officers = [
     },
 ];
 
-async function AddOfficers() {
-    officers.forEach(async (officer, officerIndex) => {
-        if (officerIndex === 4) {
-            let url: string = "";
-            const imageStream = (await fetch(officer.picture)).body;
-            if (imageStream) {
-                const blob = await upload(officer.picture, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
-                url = blob.url;
-                console.log("blob url: " + blob.url);
-            }
-            console.log("starting add officer");
-            await addOfficer(officer.name, officer.role, url, officer.bio, officerIndex + 1);
-        }
-    });
-}
+// async function AddOfficers() {
+//     officers.forEach(async (officer, officerIndex) => {
+//         if (officerIndex === 4) {
+//             let url: string = "";
+//             const imageStream = (await fetch(officer.picture)).body;
+//             if (imageStream) {
+//                 const blob = await upload(officer.picture, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
+//                 url = blob.url;
+//                 console.log("blob url: " + blob.url);
+//             }
+//             console.log("starting add officer");
+//             await addOfficer(officer.name, officer.role, url, officer.bio, officerIndex + 1);
+//         }
+//     });
+// }
 
 export default function OfficersPage() {
     const [officers, setOfficers] = useState<Officer[]>([]);
@@ -85,7 +86,7 @@ export default function OfficersPage() {
                 <div className="Grid">
                     {officers.map((officer, officerIndex) => (
                         <div className="GridItem" key={officerIndex}>
-                            <img className="Portrait" src={officer.picture} alt={officer.name + " Image"}/>
+                            <Image className="Portrait" src={officer.picture} alt={officer.name + " Image"}/>
                             <div className="Name">{officer.name}</div>
                             <div className="Role">{officer.role}</div>
                             <p className="OfficerText">{officer.bio}</p>

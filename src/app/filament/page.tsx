@@ -9,10 +9,10 @@ export default function FilamentPage() {
                 <div className="Section">
                     <h1 className="Head">Filament Checkout</h1>
                     <div className="ButtonDiv"><a href="https://forms.gle/stgn2hyCwRNGDv6QA" className="Button" target="_blank" rel="noreferrer noopener">Checkout Form</a></div>
-                    <p className="Text">All members who have paid the club fee have access to all of the club's filament.
+                    <p className="Text">All members who have paid the club fee have access to all of the club&apos;s filament.
                         However, members can check out a maximum of two filament rolls at a time. 
                     </p>
-                    <p className="Text">Haven't paid the club fee yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8yugFeTvsDFzVgzXpk7UOm4lbAYiHEVELpiI2eQCwVMb2QQ/viewform?usp=sf_link" className="Link" target="_blank" rel="noreferrer noopener">Here</a> is 
+                    <p className="Text">Haven&apos;t paid the club fee yet? <a href="https://docs.google.com/forms/d/e/1FAIpQLSf8yugFeTvsDFzVgzXpk7UOm4lbAYiHEVELpiI2eQCwVMb2QQ/viewform?usp=sf_link" className="Link" target="_blank" rel="noreferrer noopener">Here</a> is 
                     the fee payment form, which puts your name on the list of paying members. To pay the fee, talk to an officer. Fees can be paid either through PayPal or with cash.
                     </p>
                 </div>

@@ -12,8 +12,6 @@ export default function EditOfficersPage() {
     const [original, setOriginal] = useState<Officer[]>([]);
     const [signedIn, setSignedIn] = useState<boolean>(false);
 
-    const router = useRouter();
-    
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             setSignedIn(user !== null);
