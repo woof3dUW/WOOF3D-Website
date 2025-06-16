@@ -7,8 +7,6 @@ import { useRouter } from 'next/navigation';
 import Link from "next/link";
 
 export default function Header() {
-    const router = useRouter();
-
     return (
         <header className="Header">
             <Link className="HeaderText" href={"/"}>

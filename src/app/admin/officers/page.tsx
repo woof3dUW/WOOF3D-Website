@@ -6,7 +6,6 @@ import Image from "next/image";
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import { upload } from "@vercel/blob/client";
-import { del } from "@vercel/blob";
 
 export default function EditOfficersPage() {
     const [officers, setOfficers] = useState<Officer[]>([]);
@@ -92,7 +91,7 @@ export default function EditOfficersPage() {
                     if (newOfficer === undefined) {
                         // officer has been removed, so delete it from firebase and vercel blob
                         await removeOfficer(oldOfficer.id);
-                        // await deleteBlob(oldOfficer.picture);
+                        await deleteBlob(oldOfficer.picture);
                     } else {
                         if (newOfficer !== oldOfficer || officers.indexOf(newOfficer) !== i) {
                             // modifications have been made
@@ -100,7 +99,7 @@ export default function EditOfficersPage() {
                             let url: string = newOfficer.picture;
                             if (url !== oldOfficer.picture) {
                                 // remove image from vercel blob
-                                // await deleteBlob(oldOfficer.picture);
+                                await deleteBlob(oldOfficer.picture);
 
                                 const [fileType, realUrl] = newOfficer.picture.split("  ");
                                 const fileExtension = fileType.replace("image/", ".");
