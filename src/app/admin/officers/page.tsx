@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import { fetchOfficers, Officer, auth, addOfficer, removeOfficer, updateOfficer, deleteBlob } from "../../firebase";
 import Image from "next/image";
 import { onAuthStateChanged } from "firebase/auth";
-import { useRouter } from "next/navigation";
 import { upload } from "@vercel/blob/client";
 
 export default function EditOfficersPage() {

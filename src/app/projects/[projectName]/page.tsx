@@ -9,10 +9,10 @@ import { useEffect, useState } from "react";
 
 export default function IndividualProjectPage() {
     const [project, setProject] = useState<Project | null>(null);
+    const pathname = usePathname();
 
     useEffect(() => {
         try {
-            const pathname = usePathname();
             const urlProjectName = pathname.split("/").pop();
             const projectName = decodeURIComponent(urlProjectName || "");
             if (projectName) {
