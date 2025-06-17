@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { fetchOfficers, Officer, auth, addOfficer, removeOfficer, updateOfficer, deleteBlob } from "../../firebase";
+import { fetchOfficers, Officer, auth, addOfficer, removeOfficer, updateOfficer } from "../../firebase";
+import { deleteBlob } from "../../server";
 import Image from "next/image";
 import { onAuthStateChanged } from "firebase/auth";
 import { upload } from "@vercel/blob/client";
@@ -87,8 +88,10 @@ export default function EditOfficersPage() {
 
                     if (newOfficer === undefined) {
                         // officer has been removed, so delete it from firebase and vercel blob
+                        console.log("removing officer", oldOfficer.name);
+                        await deleteBlob(oldOfficer.picture)
                         await removeOfficer(oldOfficer.id);
-                        await deleteBlob(oldOfficer.picture);
+                        console.log("removed officer");
                     } else {
                         if (newOfficer !== oldOfficer || officers.indexOf(newOfficer) !== i) {
                             // modifications have been made
@@ -111,7 +114,7 @@ export default function EditOfficersPage() {
                     }
                 }
 
-                // add new list items
+                // add new list items to Vercel blob and Firebase
                 const newOfficers = officers.filter(o => o.id === "add");
                 for (let i = 0; i < newOfficers.length; i++) {
                     const officer = newOfficers[i];
@@ -124,6 +127,9 @@ export default function EditOfficersPage() {
                         await addOfficer(officer.name, officer.role, blob.url, officer.bio, officers.indexOf(officer) + 1);
                     }
                 }
+
+                // update original officers list for further changes
+                setOriginal(officers);
             } catch (error) {
                 alert(error);
             }

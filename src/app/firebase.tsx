@@ -102,6 +102,8 @@ export async function fetchOfficers() {
 
 export async function removeOfficer(id: string) {
     try {
+        console.log("removing from firebase");
+
         await deleteDoc(doc(db, "officers", id));
     } catch (error) {
         alert(error);
@@ -117,14 +119,6 @@ export async function updateOfficer(id: string, name: string, role: string, pict
             bio: bio,
             rank: rank
         });
-    } catch (error) {
-        alert(error);
-    }
-}
-
-export async function deleteBlob(url: string) {
-    try {
-        await del(url);
     } catch (error) {
         alert(error);
     }

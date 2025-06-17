@@ -85,7 +85,7 @@ export default function OfficersPage() {
                 <div className="Grid">
                     {officers.map((officer, officerIndex) => (
                         <div className="GridItem" key={officerIndex}>
-                            <Image className="Portrait" src={officer.picture} alt={officer.name + " Image"}/>
+                            <Image className="Portrait" src={officer.picture} alt={officer.name + " Image"} width={400} height={400}/>
                             <div className="Name">{officer.name}</div>
                             <div className="Role">{officer.role}</div>
                             <p className="OfficerText">{officer.bio}</p>
