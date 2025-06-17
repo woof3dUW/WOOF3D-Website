@@ -4,16 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build --output .",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@mui/base": "^5.0.0-beta.70",
-    "@mui/icons-material": "^7.1.1",
-    "@mui/material": "^7.1.1",
     "@vercel/blob": "^1.1.1",
     "firebase": "^11.8.1",
     "next": "^15.3.3",
