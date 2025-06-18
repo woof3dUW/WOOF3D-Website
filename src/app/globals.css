@@ -248,6 +248,10 @@ button {
 
 .GridItem {
     width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
 }
 
 .Input {
@@ -267,7 +271,6 @@ button {
 }
 
 .EditCard {
-    width: 50%;
     border: 2px solid black;
     border-radius: 10px;
     padding: 10px;
@@ -276,7 +279,7 @@ button {
 
 .EditButton {
     position: absolute;
-    right: -20px;
+    right: -50px;
     height: 40px;
     width: 40px;
     background-color: white;
@@ -301,9 +304,23 @@ button {
 
 .DownButton {
     top: 110px;
+    transform: rotate(180deg);
+}
+
+.LeftButton {
+    position: static;
+    right: 0;
+    transform: rotate(-90deg);
+}
+
+.RightButton {
+    right: 0;
+    position: static;
+    transform: rotate(90deg);
 }
 
 .AddButton {
+    right: 0;
     position: static;
 }
 
@@ -329,4 +346,11 @@ button {
 .BackButton {
     right: 120px;
     width: 100px;
+}
+
+.Checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: black;
 }

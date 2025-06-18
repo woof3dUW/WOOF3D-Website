@@ -31,30 +31,22 @@ export default function EditOfficersPage() {
     }, []);
 
     const handleMove = (index: number, up: boolean) => {
-        setOfficers((prevOfficers) => {
-            const newOfficers = [...prevOfficers];
-            const [movedOfficer] = newOfficers.splice(index, 1);
-            newOfficers.splice(index + (up ? (index > 0 ? -1 : 0) : (index < prevOfficers.length - 1 ? 1 : 0)), 0, movedOfficer);
-            return newOfficers; 
-        });
+        const newOfficers = [...officers];
+        const [movedOfficer] = newOfficers.splice(index, 1);
+        newOfficers.splice(index + (up ? (index > 0 ? -1 : 0) : (index < officers.length - 1 ? 1 : 0)), 0, movedOfficer);
+        setOfficers(newOfficers);
     };
 
     const handleDelete = (index: number) => {
         if (confirm("Are you sure you want to delete this officer?")) {
-            setOfficers((prevOfficers) => {
-                const newOfficers = [...prevOfficers];
-                newOfficers.splice(index, 1);
-                return newOfficers;
-            });
+            const newOfficers = [...officers];
+            newOfficers.splice(index, 1);
+            setOfficers(newOfficers);
         }
     }
 
     const handleAdd = () => {
         setOfficers((prevOfficers) => [...prevOfficers, { id: "add", name: "", role: "", picture: "", bio: "", rank: prevOfficers.length + 1 }]);
-    };
-
-    const handleDiscard = () => {
-        setOfficers(original);
     };
 
     const handleSave = async () => {
@@ -88,18 +80,16 @@ export default function EditOfficersPage() {
 
                     if (newOfficer === undefined) {
                         // officer has been removed, so delete it from firebase and vercel blob
-                        console.log("removing officer", oldOfficer.name);
-                        await deleteBlob(oldOfficer.picture)
+                        await deleteBlob([oldOfficer.picture])
                         await removeOfficer(oldOfficer.id);
-                        console.log("removed officer");
                     } else {
-                        if (newOfficer !== oldOfficer || officers.indexOf(newOfficer) !== i) {
+                        if (JSON.stringify(newOfficer) !== JSON.stringify(oldOfficer) || officers.indexOf(newOfficer) !== i) {
                             // modifications have been made
                             
                             let url: string = newOfficer.picture;
                             if (url !== oldOfficer.picture) {
                                 // remove image from vercel blob
-                                await deleteBlob(oldOfficer.picture);
+                                await deleteBlob([oldOfficer.picture]);
 
                                 const [fileType, realUrl] = newOfficer.picture.split("  ");
                                 const fileExtension = fileType.replace("image/", ".");
@@ -156,10 +146,9 @@ export default function EditOfficersPage() {
                     <div className="Section">
                         <h1 className="Head">Edit Officers</h1>
                         <button className="CornerButton" onClick={() => handleSave()}>Save</button>
-                        <button className="CornerButton BackButton" onClick={handleDiscard}>Discard</button>
                         <div className="flex flex-col gap-8">
                             {officers.map((officer, index) => (
-                                <div className="EditCard flex flex-col gap-2" key={index}>
+                                <div className="EditCard w-1/2 flex flex-col gap-2" key={index}>
                                     <button className="EditButton DeleteButton" onClick={() => handleDelete(index)}>
                                         <Image src="/admin/x-button.svg" alt="Delete Button" width={20} height={20} />
                                     </button>
@@ -167,7 +156,7 @@ export default function EditOfficersPage() {
                                         <Image src="/admin/chevron-up.svg" alt="Edit Button" width={20} height={20} />
                                     </button>
                                     <button className="EditButton DownButton" onClick={() => handleMove(index, false)}>
-                                        <Image src="/admin/chevron-down.svg" alt="Edit Button" width={20} height={20} />
+                                        <Image src="/admin/chevron-up.svg" alt="Edit Button" width={20} height={20} />
                                     </button>
                                     { officer.picture === ""
                                         ? 

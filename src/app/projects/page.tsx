@@ -333,25 +333,6 @@ import { fetchProjects, Project } from "../firebase";
 //     }
 // ];
 
-// async function AddProjects() {
-//     projects.forEach(async (project, projectIndex) => {
-//         if (true) {
-//             const urlSlides: string[] = [];
-//             for (let slideIndex = 0; slideIndex < project.slides.length; slideIndex++) {
-//                 const slide = project.slides[slideIndex];
-//                 const imageStream = (await fetch(slide)).body;
-//                 if (imageStream) {
-//                     const blob = await upload(slide, imageStream, {access: "public", handleUploadUrl: "/admin/upload"});
-//                     urlSlides[slideIndex] = blob.url;
-//                     console.log("blob url: " + blob.url);
-//                 }
-//             }
-//             console.log("starting add project");
-//             await addProject(project.title, urlSlides, project.text, false);
-//         }
-//     });
-// }
-
 function DisplayArray(array: {title: string, slides: string[], text: string[]}[]) {
     return (
         <div className="Grid">
@@ -394,11 +375,25 @@ export default function ProjectsPage() {
     return (
         <div className="Container">
             <Header/>
-            <main className="MainContent">                
-                <h1 className="Head Center">Current Projects</h1>
-                {DisplayArray(currProjectArr)}
-                <h1 className="Head Center">Past Projects</h1>
-                {DisplayArray(pastProjectArr)}
+            <main className="MainContent">  
+                {currProjectArr.length > 0
+                    ?
+                    <>
+                        <h1 className="Head Center">Current Projects</h1>
+                        {DisplayArray(currProjectArr)}
+                    </>    
+                    : 
+                    <></>
+                }              
+                {pastProjectArr.length > 0
+                    ?
+                    <>
+                        <h1 className="Head Center">Past Projects</h1>
+                        {DisplayArray(pastProjectArr)}
+                    </>    
+                    : 
+                    <></>
+                }     
             </main>
             <Footer/>
         </div>

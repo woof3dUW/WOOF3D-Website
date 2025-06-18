@@ -42,8 +42,6 @@ export default function AdminPage() {
                             <div className="flex flex-row gap-4">
                                 <Link className="SmallButton" href="/admin/officers">Officers</Link>
                                 <Link className="SmallButton" href="/admin/projects">Projects</Link>
-                                <Link className="SmallButton" href="/admin/printers">Printers</Link>
-                                <Link className="SmallButton" href="/admin/workshops">Workshops</Link>
                             </div>
                             <button className="SmallButton mt-8" onClick={() => signOut(auth)}>Sign Out</button>
                         </div>
