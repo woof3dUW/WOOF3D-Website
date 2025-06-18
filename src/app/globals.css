@@ -1,0 +1,356 @@
+@import "tailwindcss";
+
+.Container {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+.MainContent {
+    text-align: left;
+    margin-top: 70px;
+}
+
+@font-face {
+    font-family: ManropeBold;
+    src: url("/fonts/bold.woff");
+}
+
+@font-face {
+    font-family: Manrope;
+    src: url("/fonts/regular.woff");
+}
+
+.Section {
+    margin: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 80%;
+}
+
+.Text {
+    font-size: 20px;
+    font-family: 'Manrope';
+    margin-top: 10px;
+}
+
+.Head {
+    font-size: 40px;
+    font-family: 'ManropeBold';
+    text-decoration: underline;
+    text-decoration-color: rgb(218, 201, 255);
+    text-decoration-thickness: 4px;
+    margin-bottom: 0px;
+    margin-top: 30px;
+}
+
+.Banner {
+    width: 100%;
+    height: 40vh;
+    background: url("/homepage/banner.png");
+    font-family: ManropeBold;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(218, 201, 255);
+}
+
+.BannerTextTop {
+    font-size: clamp(0rem, 5vw, 3rem);
+    border: 4px solid black;
+    border-bottom: 0px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    padding: 20px;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+    color: rgb(218, 201, 255);
+    background-color: rgb(75, 46, 131);    
+    position: static;
+    z-index: 2;
+    text-align: center;
+}
+
+.BannerTextBottom {
+    font-size: clamp(0rem, 3vw, 2rem);
+    margin-top: -4px;
+    border: 4px solid black;
+    border-radius: 25px;
+    padding: 15px;
+    color: rgb(218, 201, 255);
+    background-color: rgb(75, 46, 131);
+    position: static;
+    z-index: 1;
+    text-align: center;
+}
+
+.Step {
+    font-size: 30px;
+    text-align: left;
+    font-weight: bold;
+    margin-left: 40px;
+}
+
+.StepDetails {
+    font-size: 20px;
+    list-style-type: none;
+    font-weight: 500;
+    text-align: left;
+    margin-left: 40px;
+}
+
+.Link {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.Center {
+    text-align: center;
+}
+
+.Button {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 10px;
+    padding-top: 8px;
+    margin-top: 40px;
+    border: 2px solid black;
+    color: rgb(218, 201, 255);
+    border-radius: 20px;
+    background-color: rgb(75, 46, 131);
+    text-decoration: none;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
+}
+
+.Button:hover {
+    background-color: rgb(218, 201, 255);
+    color: rgb(75, 46, 131);
+}
+
+.ButtonDiv {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.Embed {
+    border: none;
+    width: 100%;
+    max-width: 1100px;
+    height: 700px;
+    margin-top: 30px;
+    border-radius: 15px;
+    font-family: 'Manrope';
+}
+
+.MapImg {
+    width: 100%;
+    max-width: 800px;
+}
+
+.Card {
+    transition: box-shadow 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+  
+.Card:hover {
+    --tw-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+    transform: scale(1.01);
+}
+
+.Portrait {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+    max-width: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.Image {
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.OfficerText {
+    font-size: 20px;
+    font-family: 'Manrope';
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.Name {
+    font-size: 30px;
+    font-family: 'Manrope';
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.Underline:hover {
+    text-decoration: underline;
+}
+
+.Role {
+    font-size: 15px;
+    font-family: 'Manrope';
+    font-style: italic;
+}
+
+.ProjectText {
+    width: 50%;
+    height: 500px;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.SliderContainer {
+    width: 100%;
+    max-width: 600px;
+    aspect-ratio: 6 / 5;
+    margin-top: 10px;
+}
+
+.Data {
+    padding-right: 20px;
+    border-bottom: 1px solid black;
+}
+
+@media (max-width: 700px) {
+    .Data {
+        font-size: 3.571vw;
+    }
+}
+
+button {
+    cursor: pointer;
+}
+
+.Grid {
+    display: grid;
+    grid-template-columns: 400px 400px;
+    gap: 100px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    text-align: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .Grid {
+      grid-template-columns: 400px;
+    }
+}
+
+.GridItem {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+}
+
+.Input {
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.SmallButton {
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.SmallButton:hover {
+    background-color: rgb(218, 201, 255);
+    color: rgb(75, 46, 131);
+}
+
+.EditCard {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+.EditButton {
+    position: absolute;
+    right: -50px;
+    height: 40px;
+    width: 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 100%;
+    cursor: pointer;
+    padding: 10px;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.EditButton:hover {
+    background-color: rgb(218, 201, 255);
+}
+
+.DeleteButton {
+    top: 10px;
+}
+
+.UpButton {
+    top: 60px;
+}
+
+.DownButton {
+    top: 110px;
+    transform: rotate(180deg);
+}
+
+.LeftButton {
+    position: static;
+    right: 0;
+    transform: rotate(-90deg);
+}
+
+.RightButton {
+    right: 0;
+    position: static;
+    transform: rotate(90deg);
+}
+
+.AddButton {
+    right: 0;
+    position: static;
+}
+
+.CornerButton {
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    height: 40px;
+    width: 80px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    transition: background-color 0.15s ease-in-out;
+}
+
+.CornerButton:hover {
+    background-color: rgb(218, 201, 255);
+}
+
+.BackButton {
+    right: 120px;
+    width: 100px;
+}
+
+.Checkbox {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    accent-color: black;
+}
