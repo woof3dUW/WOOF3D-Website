@@ -113,12 +113,13 @@ export default function EditProjectsPage() {
                         if (JSON.stringify(newProject) !== JSON.stringify(oldProject)) {
                             // modifications have been made
                             
-                            let urls: string[] = newProject.slides;
+                            const urls: string[] = newProject.slides;
                             if (urls !== oldProject.slides) {
                                 // slides have been modified
 
                                 // find removed slides and delete them from Vercel blob
                                 const removedSlides = oldProject.slides.filter(slide => !urls.includes(slide));
+                                console.log("Removed slides:", removedSlides);
                                 await deleteBlob(removedSlides);
 
                                 for (let j = 0; j < urls.length; j++) {
@@ -159,7 +160,7 @@ export default function EditProjectsPage() {
                 }
 
                 // update original projects list for further changes
-                setOriginal(projects);
+                setOriginal(JSON.parse(JSON.stringify(projects)));
             } catch (error) {
                 alert(error);
             }
