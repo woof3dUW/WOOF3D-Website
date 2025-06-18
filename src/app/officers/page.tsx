@@ -84,7 +84,7 @@ export default function OfficersPage() {
                 <h1 className="Head Center">Meet Our Officers</h1>
                 <div className="Grid">
                     {officers.map((officer, officerIndex) => (
-                        <div className="GridItem" key={officerIndex}>
+                        <div className="GridItem !justify-start" key={officerIndex}>
                             <Image className="Portrait" src={officer.picture} alt={officer.name + " Image"} width={400} height={400}/>
                             <div className="Name">{officer.name}</div>
                             <div className="Role">{officer.role}</div>
