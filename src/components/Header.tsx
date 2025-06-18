@@ -16,7 +16,7 @@ export default function Header() {
             </Link>
             <div className="Navbar">
                 <Link className="NavItem" href={"/printers"}>Printers</Link>
-                {/* <Link className="NavItem" to="/workshops">Workshops</Link> */}
+                {/* <Link className="NavItem" href={"/workshops"}>Workshops</Link> */}
                 <Link className="NavItem" href={"/projects"}>Projects</Link>
                 <Link className="NavItem" href={"/officers"}>Officers</Link>
                 <Link className="NavItem" href={"/officehours"}>Office Hours</Link>

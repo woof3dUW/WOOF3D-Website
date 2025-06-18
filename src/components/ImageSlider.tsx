@@ -6,30 +6,37 @@ interface ImageSliderProps {
 }
 
 export default function ImageSlider({slides}: ImageSliderProps) {
+    // The index of the currently displayed slide.
     const [currentIndex, setCurrentIndex] = useState(0);
     
+    // If there are no slides, return an empty HTML tag.
     if (slides.length === 0) return <></>;
     
+    // Decreases the current slide index by 1, wrapping around to the last slide if at the first slide.
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
         setCurrentIndex(newIndex);
     }
 
+    // Increases the current slide index by 1, wrapping around to the first slide if at the last slide.
     const nextSlide = () => {
         const isLastSlide = currentIndex === slides.length - 1;
         const newIndex = isLastSlide ? 0 : currentIndex + 1;
         setCurrentIndex(newIndex);
     }
     
+    // Dynamic CSS style to change the background image of the slide component based on the current slide index.
     const slideBackground = {
         backgroundImage: `url(${slides[currentIndex]})`
     }
 
+    // Dynamic CSS styles for the selected dot.
     const selected = {
         color: "rgb(218, 201, 255)"
     }
 
+    // Dynamic CSS styles for the unselected dots.
     const unselected = {
         color: "black"
     }

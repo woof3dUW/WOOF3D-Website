@@ -2,7 +2,7 @@
 
 import { del } from "@vercel/blob";
 
-// deletes a blob in Verce Blob storage at the given URL
+// Deletes an array of blobs in Vercel Blob storage at the URLs in the urls parameter.
 export async function deleteBlob(urls: string[]) {
     try {
         if (!process.env.BLOB_READ_WRITE_TOKEN) {

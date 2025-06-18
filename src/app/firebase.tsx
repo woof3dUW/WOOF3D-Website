@@ -12,10 +12,11 @@ const firebaseConfig = {
   measurementId: "G-8Y58HYHZ58"
 };
 
-// Initialize Firebase
+// Initialize Firebase.
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app)
 
+// Used for Firebase authentication.
 export const auth = getAuth(app);
 
 export type Project = {
@@ -51,7 +52,7 @@ export async function fetchProjects(current: boolean | null) {
     }
 }
 
-// Fetches a project by its name
+// Fetches a project by its name. Includes the Firebase document's ID in the returned Project object.
 export async function fetchProjectByName(name: string) {
     try {
         const querySnapshot = await getDocs(query(collection(db, "projects"), where("title", "==", name)));
@@ -65,11 +66,11 @@ export async function fetchProjectByName(name: string) {
     }
 }
 
-// Adds a project with the given title, slides, text, and current status
+// Adds a project with the given title, slides, text, and current status.
 export async function addProject(title: string, slides: string[], text: string[], current: boolean) {
     try {
-        const upperTitle = title[0].toUpperCase() + title.slice(1); // Capitalize the first letter of the title for sorting purposes
-        console.log(upperTitle);
+        // capitalize the first letter of the title for sorting purposes
+        const upperTitle = title[0].toUpperCase() + title.slice(1); 
         await addDoc(collection(db, "projects"), {
             title: upperTitle,
             slides: slides,
@@ -81,7 +82,7 @@ export async function addProject(title: string, slides: string[], text: string[]
     } 
 }
 
-// Removes a project by its ID
+// Removes a project by its Firebase document ID.
 export async function removeProject(id: string) {
     try {
         await deleteDoc(doc(db, "projects", id));
@@ -90,7 +91,7 @@ export async function removeProject(id: string) {
     }
 }
 
-// Updates a project using the given ID, title, slides, text, and current status
+// Updates a project using the given ID, title, slides, text, and current status.
 export async function updateProject(id: string, title: string, slides: string[], text: string[], current: boolean) {
     try {
         await updateDoc(doc(db, "projects", id), {
@@ -104,7 +105,7 @@ export async function updateProject(id: string, title: string, slides: string[],
     }
 }
 
-// Adds an officer with the given name, role, picture, bio, and rank
+// Adds an officer with the given name, role, picture, bio, and rank.
 export async function addOfficer(name: string, role: string, picture: string, bio: string, rank: number) {
     try {
         await addDoc(collection(db, "officers"), {
@@ -119,7 +120,7 @@ export async function addOfficer(name: string, role: string, picture: string, bi
     } 
 }
 
-// Fetches all officers, ordered by their rank in ascending order
+// Fetches all officers, ordered by their rank in ascending order. Includes the Firebase document's ID in the returned Officer objects.
 export async function fetchOfficers() {
     try {
         const querySnapshot = await getDocs(query(collection(db, "officers"), orderBy("rank", "asc")));
@@ -133,7 +134,7 @@ export async function fetchOfficers() {
     }
 }
 
-// Removes an officer by their ID
+// Removes an officer by their Firebase document ID.
 export async function removeOfficer(id: string) {
     try {
         await deleteDoc(doc(db, "officers", id));
@@ -142,7 +143,7 @@ export async function removeOfficer(id: string) {
     }
 }
 
-// Updates an officer's details using the given ID, name, role, picture, bio, and rank
+// Updates an officer's details using the given ID, name, role, picture, bio, and rank.
 export async function updateOfficer(id: string, name: string, role: string, picture: string, bio: string, rank: number) {
     try {
         await updateDoc(doc(db, "officers", id), {

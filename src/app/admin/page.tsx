@@ -6,20 +6,27 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function AdminPage() {
+    // Indicates whether the user is signed in or not.
     const [signedIn, setSignedIn] = useState<boolean>(false);
+    // The email field for the sign-in form.
     const [email, setEmail] = useState<string>("");
+    // The password field for the sign-in form.
     const [password, setPassword] = useState<string>("");
 
+    // Runs on page start, checks if the user is signed in.
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             setSignedIn(user !== null);
         });
     }, []);
 
+    // Handles the sign-in form submission.
     const onSubmitClick = (event: React.FormEvent<HTMLFormElement>) => {
+        // check if email and password are empty
         if (email.length === 0) alert("You must enter an email");
         else if (password.length === 0) alert("You must enter a password");
         else {
+            // sign in with Firebase authentication
             signInWithEmailAndPassword(auth, email, password)
             .then(user => {
                 setSignedIn(user !== null);

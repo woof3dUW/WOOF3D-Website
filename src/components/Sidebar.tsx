@@ -1,22 +1,22 @@
 import { useState } from "react";
 import "./Sidebar.css";
-import { useRouter } from 'next/navigation'; 
+import Link from "next/link";
 
 export default function Sidebar() {
+    // Controls the visibility of the sidebar.
     const [visible, setVisible] = useState(false);
-    const router = useRouter();
 
     return (
         <>
             <div className="Dim" style={visible ? {opacity: "75%", display: "block"} : {width: "0px", display: "none"}}></div>
             <div className="Sidebar" style={visible ? {width: "75%"} : {width: "0px"}}>
                 <div className="Close" onClick={() => setVisible(false)}>&times;</div>
-                <div className="SideNavItem" onClick={() => router.push("/printers")}>Printers</div>
-                {/* <div className="SideNavItem" onClick={() => router.push("/workshops")}>Workshops</div> */}
-                <div className="SideNavItem" onClick={() => router.push("/projects")}>Projects</div>
-                <div className="SideNavItem" onClick={() => router.push("/officers")}>Officers</div>
-                <div className="SideNavItem" onClick={() => router.push("/officehours")}>Office Hours</div>
-                <div className="SideNavItem" onClick={() => router.push("/filament")}>Filament</div>
+                <Link className="NavItem" href={"/printers"}>Printers</Link>
+                {/* <Link className="NavItem" href={"/workshops"}>Workshops</Link> */}
+                <Link className="NavItem" href={"/projects"}>Projects</Link>
+                <Link className="NavItem" href={"/officers"}>Officers</Link>
+                <Link className="NavItem" href={"/officehours"}>Office Hours</Link>
+                <Link className="NavItem" href={"/filament"}>Filament</Link>
             </div>
             <div  className="ThreeBars Unselectable" onClick={() => setVisible(true)}>&#9776;</div>
         </>

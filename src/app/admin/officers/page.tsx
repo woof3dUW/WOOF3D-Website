@@ -8,10 +8,14 @@ import { onAuthStateChanged } from "firebase/auth";
 import { upload } from "@vercel/blob/client";
 
 export default function EditOfficersPage() {
+    // The list of officers to be displayed and edited.
     const [officers, setOfficers] = useState<Officer[]>([]);
+    // A copy of the original officers list to check for changes.
     const [original, setOriginal] = useState<Officer[]>([]);
+    // Indicates whether the user is signed in or not.
     const [signedIn, setSignedIn] = useState<boolean>(false);
 
+    // Runs on page start, fetches officers from Firebase and checks auth state.
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             setSignedIn(user !== null);
@@ -19,8 +23,9 @@ export default function EditOfficersPage() {
                 try {
                     fetchOfficers().then((offs) => {
                         if (offs) {
-                            setOfficers(offs);
-                            setOriginal(offs);
+                            // deep copy officers to officers array and original array to avoid reference issues
+                            setOfficers(JSON.parse(JSON.stringify(offs)));
+                            setOriginal(JSON.parse(JSON.stringify(offs)));
                         }
                     });
                 } catch (error) {
@@ -30,6 +35,8 @@ export default function EditOfficersPage() {
         });
     }, []);
 
+    // Moves an officer up or down in the officers array. The index parameter is the current index of the officer,
+    // and the up parameter indicates whether to move the officer up (true) or down (false) in the list.
     const handleMove = (index: number, up: boolean) => {
         const newOfficers = [...officers];
         const [movedOfficer] = newOfficers.splice(index, 1);
@@ -37,7 +44,9 @@ export default function EditOfficersPage() {
         setOfficers(newOfficers);
     };
 
+    // Deletes an officer from the officers array. The index parameter is the index of the officer to be deleted.
     const handleDelete = (index: number) => {
+        // confirm deletion through a popup before proceeding
         if (confirm("Are you sure you want to delete this officer?")) {
             const newOfficers = [...officers];
             newOfficers.splice(index, 1);
@@ -45,10 +54,12 @@ export default function EditOfficersPage() {
         }
     }
 
+    // Adds a new officer to the officers array with empty values. The officer's ID is set to "add" to indicate that it needs to be added when saving.
     const handleAdd = () => {
         setOfficers((prevOfficers) => [...prevOfficers, { id: "add", name: "", role: "", picture: "", bio: "", rank: prevOfficers.length + 1 }]);
     };
 
+    // Saves the current officers list to Firebase and Vercel blob, checking for changes and errors.
     const handleSave = async () => {
         // do nothing if nothing has been changed
         if (JSON.stringify(officers) !== JSON.stringify(original) && signedIn) {
@@ -73,62 +84,86 @@ export default function EditOfficersPage() {
                     uniqueNames.add(officer.name);
                 }
                 
+                // loop through original officers and check for modifications or deletions in new officers
                 for (let i = 0; i < original.length; i++) {
+                    // current original officer
                     const oldOfficer = original[i];
 
+                    // find the corresponding new officer in the officers array if it exists
                     const newOfficer: Officer | undefined = officers.find(o => o.id === oldOfficer.id);
 
+                    // check if the corresponding new officer exists
                     if (newOfficer === undefined) {
-                        // officer has been removed, so delete it from firebase and vercel blob
+                        // officer has been removed, so delete it from Firebase and Vercel blob
                         await deleteBlob([oldOfficer.picture])
                         await removeOfficer(oldOfficer.id);
                     } else {
+                        // corresponding new officer exists, check for modifications
                         if (JSON.stringify(newOfficer) !== JSON.stringify(oldOfficer) || officers.indexOf(newOfficer) !== i) {
                             // modifications have been made
-                            
+
+                            // check if the picture has been changed
                             let url: string = newOfficer.picture;
                             if (url !== oldOfficer.picture) {
-                                // remove image from vercel blob
+                                // image has been changed, remove old image from vercel blob
                                 await deleteBlob([oldOfficer.picture]);
 
+                                // extract file type and URL from the new officer's picture 
+                                // the new picture is stored in the format "image/type  URL"
                                 const [fileType, realUrl] = newOfficer.picture.split("  ");
+                                // change file type format from "image/type" to ".type"
                                 const fileExtension = fileType.replace("image/", ".");
+                                // fetch the image stream from the URL
                                 const imageStream = (await fetch(realUrl)).body;
+                                // upload the image stream to Vercel blob storage if it exists
                                 if (imageStream) {
+                                    // upload in format "/officers/firstname.type"
                                     const blob = await upload("/officers/" + newOfficer.name.split(" ")[0] + fileExtension, imageStream, { access: "public", handleUploadUrl: "/admin/upload" });
                                     url = blob.url;
                                 }
                             }
+                            // update the officer in Firebase with the new details
                             await updateOfficer(oldOfficer.id, newOfficer.name, newOfficer.role, url, newOfficer.bio, officers.indexOf(newOfficer) + 1);
                         }
                     }
                 }
 
-                // add new list items to Vercel blob and Firebase
+                // find new list items, identified through the "add" id
                 const newOfficers = officers.filter(o => o.id === "add");
+                // loop through new officers and add them to Firebase and Vercel blob
                 for (let i = 0; i < newOfficers.length; i++) {
                     const officer = newOfficers[i];
                     
+                    // extract file type and URL from the new officer's picture 
+                    // the new picture is stored in the format "image/type  URL"
                     const [fileType, realUrl] = officer.picture.split("  ");
+                    // change file type format from "image/type" to ".type"
                     const fileExtension = fileType.replace("image/", ".");
+                    // fetch the image stream from the URL
                     const imageStream = (await fetch(realUrl)).body;
+                    // upload the image stream to Vercel blob storage if it exists
                     if (imageStream) {
+                        // upload in format "/officers/firstname.type"
                         const blob = await upload("/officers/" + officer.name.split(" ")[0] + fileExtension, imageStream, { access: "public", handleUploadUrl: "/admin/upload" });
+                        // add new officer to Firebase
                         await addOfficer(officer.name, officer.role, blob.url, officer.bio, officers.indexOf(officer) + 1);
                     }
                 }
 
-                // update original officers list for further changes
-                setOriginal(officers);
+                // update original officers list for further changes (deep copy to avoid reference issues)
+                setOriginal(JSON.parse(JSON.stringify(officers)));
             } catch (error) {
                 alert(error);
             }
         }
     };
 
+    // Handles the image change event when a user selects a new image for an officer.
     const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
+        // make sure image exists
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
+            // save the file type in the URL in the format "image/type  URL"
             const url = file.type + "  " + URL.createObjectURL(file);
             setOfficers((prevOfficers) => {
                 const newOfficers = [...prevOfficers];

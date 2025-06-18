@@ -8,10 +8,14 @@ import { onAuthStateChanged } from "firebase/auth";
 import { upload } from "@vercel/blob/client";
 
 export default function EditProjectsPage() {
+    // The list of projects to be displayed and edited.
     const [projects, setProjects] = useState<Project[]>([]);
+    // The original list of projects to check for changes.
     const [original, setOriginal] = useState<Project[]>([]);
+    // Whether the user is signed in or not.
     const [signedIn, setSignedIn] = useState<boolean>(false);
 
+    // Runs on page start, fetches projects from Firebase and checks auth state.
     useEffect(() => {
         onAuthStateChanged(auth, (user) => {
             setSignedIn(user !== null);
@@ -19,6 +23,7 @@ export default function EditProjectsPage() {
                 try {
                     fetchProjects(null).then((projs) => {
                         if (projs) {
+                            // deep copy projects to projects array and original array to avoid reference issues
                             setProjects(JSON.parse(JSON.stringify(projs)));
                             setOriginal(JSON.parse(JSON.stringify(projs)));
                         }
@@ -30,14 +35,19 @@ export default function EditProjectsPage() {
         });
     }, []);
 
+    // Moves a slide up or down in the list. index is the project index, sIndex is the slide's index within the project slides, 
+    // and up is a boolean indicating whether to move the slide up or down in the list.
     const handleSlideMove = (index: number, sIndex: number, up: boolean) => {
         const newProjects = [...projects];
         const [movedSlide] = newProjects[index].slides.splice(sIndex, 1);
+        // move the slide up or down only if it is not already at the top or bottom of the list
         newProjects[index].slides.splice(sIndex + (up ? (sIndex > 0 ? -1 : 0) : (sIndex < projects[index].slides.length ? 1 : 0)), 0, movedSlide);
         setProjects(newProjects);
     };
 
+    // Deletes a project from the list. index is the index of the project in the projects array.
     const handleDelete = (index: number) => {
+        // open a popup to confirm deletion before proceeding
         if (confirm("Are you sure you want to delete this project?")) {
             const newProjects = [...projects];
             newProjects.splice(index, 1);
@@ -45,7 +55,9 @@ export default function EditProjectsPage() {
         }
     }
 
+    // Deletes a slide from the project. index is the index of the project in the projects array, sIndex is the index of the slide in the project's slides array.
     const handleSlideDelete = (index: number, sIndex: number) => {
+        // open a popup to confirm deletion before proceeding
         if (confirm("Are you sure you want to delete this slide?")) {
             const newProjects = [...projects];
             newProjects[index].slides.splice(sIndex, 1);
@@ -53,7 +65,9 @@ export default function EditProjectsPage() {
         }
     }
 
+    // Deletes a text box from the project. index is the index of the project in the projects array, tIndex is the index of the text box in the project's text array.
     const handleTextDelete = (index: number, tIndex: number) => {
+        // open a popup to confirm deletion before proceeding
         if (confirm("Are you sure you want to delete this text box?")) {
             setProjects(projects.map((p, i) => i === index ? { 
                 ...p, 
@@ -62,22 +76,27 @@ export default function EditProjectsPage() {
         }
     }
 
+    // Adds a new project to the list with an empty title, no slides, and no text and current set to true. 
+    // The ID is set to "add" to indicate that this is a new project when saving.
     const handleAdd = () => {
         setProjects((prevProjects) => [...prevProjects, { id: "add", title: "", slides: [], text: [], current: true}]);
     };
 
+    // Adds a new slide to the project at the specified index in the projects array.
     const handleSlideAdd = (index: number) => {
         const newProjects = [...projects];
         newProjects[index].slides.push("");
         setProjects(newProjects);
     };
 
+    // Adds a new text box to the project at the specified index in the projects array.
     const handleTextAdd = (index: number) => {
         const newProjects = [...projects];
         newProjects[index].text.push("");
         setProjects(newProjects);
     };
 
+    // Saves the current projects list to Firebase and Vercel blob, checking for changes and errors.
     const handleSave = async () => {
         // do nothing if nothing has been changed
         if (JSON.stringify(projects) !== JSON.stringify(original) && signedIn) {
@@ -100,66 +119,91 @@ export default function EditProjectsPage() {
                     uniqueNames.add(project.title);
                 }
                 
+                // loop through original projects and check for changes
                 for (let i = 0; i < original.length; i++) {
+                    // current original project
                     const oldProject = original[i];
 
+                    // find the corresponding new project by ID if it exists
                     const newProject: Project | undefined = projects.find(p => p.id === oldProject.id);
 
+                    // check if the corersponding new project exists
                     if (newProject === undefined) {
-                        // project has been removed, so delete it from firebase and vercel blob
+                        // project has been removed, so delete it from Firebase and Vercel blob
                         await deleteBlob(oldProject.slides)
                         await removeProject(oldProject.id);
                     } else {
+                        // corresponding new officer exists, check for modifications
                         if (JSON.stringify(newProject) !== JSON.stringify(oldProject)) {
                             // modifications have been made
                             
+                            // check if the slides have been modified
                             const urls: string[] = newProject.slides;
                             if (urls !== oldProject.slides) {
                                 // slides have been modified
 
                                 // find removed slides and delete them from Vercel blob
                                 const removedSlides = oldProject.slides.filter(slide => !urls.includes(slide));
-                                console.log("Removed slides:", removedSlides);
                                 await deleteBlob(removedSlides);
 
+                                // loop through the new URLs and check if they need to be uploaded to Vercel blob
                                 for (let j = 0; j < urls.length; j++) {
                                     if (urls[j].includes("  ")) {
                                         // the slide is new, so fetch the image and upload it to Vercel blob
+
+                                        // extract file type and URL from the slide 
+                                        // the new picture is stored in the format "image/type  URL"
                                         const [fileType, realUrl] = urls[j].split("  ");
+                                        // change file type format from "image/type" to ".type"
                                         const fileExtension = fileType.replace("image/", ".");
+                                        // fetch the image stream from the URL
                                         const imageStream = (await fetch(realUrl)).body;
+                                        // upload the image stream to Vercel blob storage if it exists
                                         if (imageStream) {
+                                            // upload in format "/projects/firstword.type"
                                             const blob = await upload("/projects/" + newProject.title.split(" ")[0] + fileExtension, imageStream, { access: "public", handleUploadUrl: "/admin/upload" });
+                                            // replace the URL in the URLs array with the new blob URL
                                             urls[j] = blob.url;
                                         }
                                     }
                                 }
                             }
+                            // update the project in Firebase with the new title, slides, text, and current status
                             await updateProject(newProject.id, newProject.title, urls, newProject.text, newProject.current);
                         }
                     }
                 }
 
-                // add new list items to Vercel blob and Firebase
+                // find new projects through the ID "add"
                 const newProjects = projects.filter(p => p.id === "add");
+                // loop through new projects and add them to Firebase and Vercel blob
                 for (let i = 0; i < newProjects.length; i++) {
                     const project = newProjects[i];
                     const urls: string[] = [];
                     
+                    // loop through the slides of the new project and upload them to Vercel blob
                     for (let j = 0; j < project.slides.length; j++) {
                         const slide = project.slides[j];
+                        // extract file type and URL from the slide 
+                        // the new picture is stored in the format "image/type  URL"
                         const [fileType, realUrl] = slide.split("  ");
+                        // change file type format from "image/type" to ".type"
                         const fileExtension = fileType.replace("image/", ".");
+                        // fetch the image stream from the URL
                         const imageStream = (await fetch(realUrl)).body;
+                        // upload the image stream to Vercel blob storage if it exists
                         if (imageStream) {
+                            // upload in format "/projects/firstword.type"
                             const blob = await upload("/projects/" + project.title.split(" ")[0] + fileExtension, imageStream, { access: "public", handleUploadUrl: "/admin/upload" });
+                            // add the blob URL to the URLs array
                             urls.push(blob.url);
                         }
                     }
+                    // add the new project to Firebase
                     await addProject(project.title, urls, project.text, project.current);
                 }
 
-                // update original projects list for further changes
+                // update original projects list for further changes (deep copy to avoid reference issues)
                 setOriginal(JSON.parse(JSON.stringify(projects)));
             } catch (error) {
                 alert(error);
@@ -167,9 +211,13 @@ export default function EditProjectsPage() {
         }
     };
 
+    // Handles image change for a specific slide in a project. e is the HTML file upload event, index is the project index
+    // and sIndex is the slide index within the project slides.
     const handleImageChange = async (e: React.ChangeEvent<HTMLInputElement>, index: number, sIndex: number) => {
+        // make sure file exists
         if (e.target.files && e.target.files[0]) {
             const file = e.target.files[0];
+            // save the file type in the URL in the format "image/type  URL"
             const url = file.type + "  " + URL.createObjectURL(file);
             setProjects((prevProjects) => {
                 const newProjects = [...prevProjects];

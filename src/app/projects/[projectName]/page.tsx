@@ -8,12 +8,17 @@ import { fetchProjectByName, Project} from "../../firebase";
 import { useEffect, useState } from "react";
 
 export default function IndividualProjectPage() {
+    // The project being displayed.
     const [project, setProject] = useState<Project | null>(null);
+    // The current URL.
     const pathname = usePathname();
 
+    // Runs on page start, fetches project by name from Firebase using the URL.
     useEffect(() => {
         try {
+            // get last part of the URL, which is the project name
             const urlProjectName = pathname.split("/").pop();
+            // uri decode name if it exists
             const projectName = decodeURIComponent(urlProjectName || "");
             if (projectName) {
                 fetchProjectByName(projectName).then((proj) => {
