@@ -152,6 +152,8 @@ export default function EditOfficersPage() {
 
                 // update original officers list for further changes (deep copy to avoid reference issues)
                 setOriginal(JSON.parse(JSON.stringify(officers)));
+
+                alert("Save successful");
             } catch (error) {
                 alert(error);
             }

@@ -205,6 +205,8 @@ export default function EditProjectsPage() {
 
                 // update original projects list for further changes (deep copy to avoid reference issues)
                 setOriginal(JSON.parse(JSON.stringify(projects)));
+
+                alert("Save successful");
             } catch (error) {
                 alert(error);
             }
