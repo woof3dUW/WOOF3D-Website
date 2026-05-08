@@ -38,6 +38,10 @@ export default function OfficersPage() {
                         </div>
                     ))}
                 </div>
+                <div className="Section flex flex-col justify-center items-center">
+                    <Image className="GroupPhoto" src={"/group_photo_2026.jpg"} alt="2026 Group Photo" height={600} width={800}/>
+                    <div className="Role">Du Tran, Juliette Klein, Anna Molotsky, Joshua Levin, Oshwin Dang, Giang Pham, Vash Mavrinac</div>
+                </div>
             </main>
             <Footer />
         </div>

@@ -173,6 +173,12 @@
     border-radius: 10px;
 }
 
+.GroupPhoto {
+    border-radius: 10px;
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+
 .OfficerText {
     font-size: 20px;
     font-family: 'Manrope';
