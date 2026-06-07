@@ -13,10 +13,10 @@ export default function HomePage() {
                     <h1 className="BannerTextTop">Welcome to WOOF3D</h1>
                     <h1 className="BannerTextBottom">The 3D Printing Club at the University of Washington</h1>
                 </div>
-                <div className="Section">
+                {/* <div className="Section">
                     <h1 className="Head">Upcoming Events</h1>
                     <iframe className="Embed" title="calendar" src="https://calendar.google.com/calendar/embed?height=700&wkst=1&ctz=America%2FLos_Angeles&bgcolor=%23DAC9FF&amp&showTitle=0&showPrint=0&showTabs=0&showCalendars=0&showTz=0&showNav=0&showDate=0&src=N2UyZTdhZWMzZDE2MDBhMDY4YWMyNjRlN2E1OWQxMmZlNTc2ZDk5OGQ5ODFiZjUzOTY4ZTlhODk3NzQwMGYyN0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23B39DDB" frameBorder="0"></iframe>
-                </div>
+                </div> */}
                 <div className="Section">
                     <h1 className="Head">About the Club</h1>
                     <p className="Text">As the 3D printing club at UW, we provide a hub for anyone interested in 3D printing. 
