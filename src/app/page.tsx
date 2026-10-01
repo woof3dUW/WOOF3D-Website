@@ -60,10 +60,10 @@ export default function HomePage() {
                         src={`https://www.google.com/maps/embed/v1/place?key=${process.env.MAP_KEY}&q=4200+Little+Canoe+Channel+NE,Seattle,WA`}
                         allowFullScreen>
                     </iframe>
-                    <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
+                    {/* <p className="Text">Workshops and other club meetings are held in the Pompeii Room on the basement floor on the North side of McMahon.</p>
                     <Image className="MapImg" src={"/homepage/pompeiiRoom.png"} width={800} height={484} alt="Map to the Pompeii Room"/>
                     <p className="Text">The club printers and filament are in The 8 makerspace on the basement floor on the South side of McMahon</p>
-                    <Image className="MapImg" src={"/homepage/the8.png"} width={800} height={484} alt="Map to The 8"/>
+                    <Image className="MapImg" src={"/homepage/the8.png"} width={800} height={484} alt="Map to The 8"/> */}
                 </div>
             </main>
             <Footer/>
