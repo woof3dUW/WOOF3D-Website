@@ -22,19 +22,19 @@ export default function HomePage() {
                     <p className="Text">As the 3D printing club at UW, we provide a hub for anyone interested in 3D printing. 
                     Whether you&apos;re a beginner or an expert, we have something for everyone. Experience is not required, and neither is any time commitment.
                     </p>
-                    <p className="Text">During Fall Quarter, we hold weekly workshops mostly aimed towards beginners. This includes everything from how to use a 
-                        3D printer to resin printing and 3D printed fabrics. Show up to as many as you want!
+                    <p className="Text">During Fall Quarter, we hold weekly workshops mostly aimed towards beginners.
+                                        These will teach the basics of 3D modeling in OnShape, as well as how to print using the club printers.
                     </p>
-                    <p className="Text">During Winter and Spring Quarters we provide members with the opportunity to work on a larger 
-                        scale 3D printing project with other members. Joining a team is not required, but it is a good way to get hands on 
-                        experience with 3D printing and learn about hardware and software in the process. 
+                    <p className="Text">We also provide members with the opportunity to work on a larger 
+                        scale 3D printing project with other members throughout the year. Joining a team is not required, but it is a good way to get hands on 
+                        experience and learn more about hardware and software in the process. 
                         Check out the Projects tab for information on current and past projects!
                     </p>
                 </div>
                 <div className="Section">
                     <h1 className="Head">Cost</h1>
-                    <p className="Text">Attending all workshops is completely free. There is a $25 fee to become a full fledged club member. 
-                        This gives you access to unlimited filament, access to the club&apos;s printers, as well as free pizza at the end of each quarter at the club social.
+                    <p className="Text">Attending all workshops is completely free. There is a $25 fee to become a full fledged club member,
+                                        which gives unlimited access to the club printers and filament.
                     </p>
                 </div>
                 <div className="Section">
